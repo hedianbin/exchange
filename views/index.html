@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gate.io - The Gate of Blockchain Assets Exchange</title>
+<meta name="description" content="网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+<meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+<meta name="format-detection" content="telephone=no">
+<!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+<link href="css/style.css?v=1535042251" rel="stylesheet">
+<style>
+.icon-48, .icon-32, .icon-16 {
+	background-image: url("images/coins48.png?v=1535100628")
+}
+</style>
+<link href="css/coins_16.css?v=1535100628" rel="stylesheet">
+<link href="css/coins_32.css?v=1535100628" rel="stylesheet">
+<link href="css/coins_48.css?v=1535100628" rel="stylesheet">
+<link href="css/marketlist.css?v=1534904086" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png"/>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+<script src="js/loginRegister.js"></script>
+</head>
+<body class="">
+<div id="siteNoty" class="notification-box">
+  <div class="noty_message">【重要通知】： <a id="siteNotyCon" href="/article/16610" >gate.io已分发Mobius(MOBI)奖励</a><a class="close pull-right" href=javascript:;></a></div>
+</div>
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/nav.html")
+	</script>
+<div class="content">
+  <div id="full-screen-slider">
+    <div id="bannerProgress">
+      <div id="innerProg"></div>
+    </div>
+    <div class="l-box-con">
+      <div class="login_box">
+        <div class="step" id="login-reg" style="">
+          <form name="login" id="loginForm">
+            <b>登录</b>
+            <input type="hidden" name="iprestriction" id="iprestriction" value='1'>
+            <div class="username">
+              <input name="email" id="nick" class="intxt" placeholder="用户名" type="text" onfocus="if(placeholder=='用户名'){placeholder=''}" onblur="if(placeholder==''){placeholder='用户名'}">
+            </div>
+            <div class="password">
+              <input name="password" id="pwd" class="intxt" placeholder="密码" type="password" autocomplete="new-password" onfocus="if(placeholder=='密码'){placeholder=''}" onblur="if(placeholder==''){placeholder='密码'}">
+            </div>
+            <div class="cap-code"> 
+              <!--<i class="icon-code"><img src="images/loginpas.png" /></i>-->
+              <input name="captcha" id="captcha" class="intxt" placeholder="验证码" type="text" onfocus="if(placeholder=='验证码'){placeholder=''}" onblur="if(placeholder==''){placeholder='验证码'}" maxlength="8">
+              <img id="loginCaptcha" src="images/captcha.png" alt="Captcha" title="看不清？换一张" > </div>
+            <div class="btn">
+              <button type="submit" class="btn btn-error btn-block sub-btn" id="loginSub"><span>登录</span>
+              <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div>
+              </button>
+            </div>
+            <div class="wj"><a href="/resetpw" target="_blank">忘记密码?</a> &nbsp;&nbsp;&nbsp;<a class="im-new" href="/signup" target="_blank">新用户注册</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <ul id="slides">
+      <li class="imgli" data-id="#11232d" data-txt="#ffdede"> <img src="images/bnrs/bnr_wltxzb_cn.jpg"> </li>
+    </ul>
+    <div class="area-btn-bg"></div>
+  </div>
+  <div  class="left_con">
+    <div class="tline_btns clearfix" id="marketlist_controller" >
+      <button id="usdt" class="tline_btn button "><span>对USDT交易区</span></button>
+      <button id="btc" class="tline_btn button btn_selected"><span>对BTC交易区</span></button>
+      <button id="eth" class="tline_btn button "><span>对ETH交易区</span></button>
+      <button id="qtum" class="tline_btn button "><span>对QTUM交易区</span></button>
+      <button id="limited" class="tline_btn button "><span>限时交易区</span></button>
+      <button id="custom" class="tline_btn button "><span>我的自选区</span></button>
+    </div>
+    <div id="mkCon">
+      <div id="sBar">
+        <div class="bottom-notice">
+          <ul>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewBox="0 -2.914 13 18">
+                <path fill="#666" d="M9.126 5.273l-.88.782v.057c.73.795 1.178 1.884 1.178 3.083 0 1.2-.45 2.29-1.178 3.085v.06l.88.78c.915-1.02 1.476-2.4 1.476-3.925 0-1.523-.56-2.904-1.476-3.922zM0 6.84v4.712h2.356l3.534 3.534V3.306L2.356 6.84"/>
+                <path fill="#666" d="M10.98 3.625l-.883.782C11.15 5.725 11.78 7.387 11.78 9.2c0 1.814-.63 3.476-1.683 4.784l.882.782c1.234-1.52 1.977-3.457 1.977-5.57 0-2.112-.742-4.054-1.98-5.573v.002z"/>
+              </svg>
+              <a class="n-box" href="/article/16610" target=_blank>公告：gate.io已分发Mobius(MOBI)奖励</a><a href="/articlelist/ann" style="margin-left: 20px;color: #de5959">更多...</a> </li>
+          </ul>
+        </div>
+        <div class="dataTables_wrapper">
+          <div class="dataTables_filter search-p">
+            <label>
+              <input type="search" id="fsBar" placeholder='搜索BTC交易区'>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="marketMain">
+        <div id="mianBox">
+          <table id="listTable" class="marketlist dataTable">
+            <thead>
+              <tr>
+                <th class="sortable"><b>币种对<span class=curr-base>USDT</span></b></th>
+                <th class="sortable"><b>价格<span class=curr-base>USDT</span></b></th>
+                <th class="sortable"><b>交易量<span class=curr-base>USDT</span></b></th>
+                <th class="sortable"><b>总市值</b></th>
+                <th class="sortable day-updn"><b>日涨跌</b></th>
+                <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                <th class="sorting_disabled"></th>
+                <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+              </tr>
+            </thead>
+            <tbody id="list_tbody">
+              <% list.forEach(function(token){ %>
+              <tr id=eth_btc>
+                <td ><a class="coin-name " href="/trade/ETH_BTC" title="<%= token.name %>"><span class="icon-32 icon-32-eth"></span><span class="name-con"><b><span class="curr_a"><%= token.symbol %></span></b> <span class="cname"><%= token.name %></span> </span></a></td>
+                <td><%= token.price %><span style='color:#999'></span></td>
+                <td><%= token.number %></td>
+                <td>￥<%= token.totalvalue %>万</td>
+                <td class="day-updn"><span class=green>-1.12 %</span></td>
+                <td><img src="images/qushi.png"></td>
+                <td><a class="go-trade-btn r-btn" href=<%= "/trade?tokenid=" + token.id + "&replacetokentype=1" %>>去交易</a></td>
+                <td class="custom-option"><i class="add-fav"></i></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="advantage">
+    <h1>Blockchain Assets Trading Platform</h1>
+    <h2>Gate.io</h2>
+    <img class="gate-logo" src="images/gateio_h.svg" title="下载大图" alt="gate.io logo"> </div>
+</div>
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+	</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户登录/注册 - Gate.io - The Gate of Blockchain Assets Exchange</title>
+<meta name="description" content="网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+<meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="no-referrer" />
+<!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+<link href="css/style.css?v=1535042251" rel="stylesheet">
+<style>
+.icon-48, .icon-32, .icon-16 {
+	background-image: url("images/coins48.png?v=1535100628")
+}
+</style>
+<link href="css/coins_16.css?v=1535100628" rel="stylesheet">
+<link href="css/coins_32.css?v=1535100628" rel="stylesheet">
+<link href="css/login.css?v=01533875578" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png"/>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+<script src="js/loginRegister.js"></script>
+</head>
+<body class="">
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/logoutnav.html")
+	</script> 
+<div class="left_con_login">
+  <div class="login_incontent login-con">
+    <div class="right_mcontent clearfix">
+      <div class="maichu">
+        <div class="m_title">
+          <h4>登录</h4>
+        </div>
+        <div class="m_con rightlogin">
+          <form role="form" id="loginForm">
+            <div class="form-group parentCls has-feedback" id="emailGroup">
+              <label for="email">用户名/邮箱</label>
+              <div class="automail-list"></div>
+              <input type="text" class="form-control inputElem" name="email" id="email" value="" >
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+              <div id="email_text" style="position: relative;left: 92px;color: red"></div>
+            <div class="form-group has-feedback" id="pswGroup">
+              <label for="password">登录密码</label>
+              <input type="password" class="form-control" name="password" id="password" autocomplete="new-password">
+              <div class="input-item-info"><a href="resetpw" style="line-height: 48px;margin-left: 5px;">忘记密码？</a></div>
+              <div id="loginpassword_text" style="position: relative;left: 82px;color: red"></div>
+              <span class="help-block"></span> </div>
+            <div class="form-group has-feedback clearfix" id="codeGroup">
+              <label for="captcha_code">图片验证码</label>
+              <div class="clearfix code-box">
+                <input type="text" class="form-control code-input" name="captcha" id="captcha_code" maxlength="8" autocomplete="off">
+                <div id="code"><img class="cap-img" id="loginCaptcha" src="images/captcha.png" alt="Captcha" title="看不清？换一张"/></div>
+                <span class="help-block"></span> </div>
+            </div>
+            <div class="form-group" id="ipGroup">
+              <label for="iprestriction" style="user-select: none;">安全选项</label>
+              <div class="pull-left" style="margin-top: 0px">
+                <label class="haschecked pull-left" style="width: auto;user-select: none;">
+                  <input  class="form-control" type="checkbox" name="iprestriction" id="iprestriction" value='1' checked>
+                  绑定到IP地址 <span class=red>（为保证账号安全如非动态IP切勿去选！）</span> </label>
+              </div>
+              <span class="help-block"></span> </div>
+            <button type="submit" class="btn btn-error btn-block sub-btn" id="loginSub"><span>登录</span>
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            </button>
+            <p class="red"><i id="dpIcon">!</i>提醒：谨防骗子，切勿泄露密码给任何人，官方从不会向用户询问密码。</p>
+            <span class="errmsg" id='errmsg'></span>
+          </form>
+        </div>
+        <!-- login --> 
+      </div>
+      <div class="mairu">
+        <div class="m_title">
+          <h4>注册</h4>
+        </div>
+        <div class="m_con_buy leftregi">
+          <form role="form" id="signupForm">
+            <input type="hidden" name="ref_uid" id="ref_uid" value=""/>
+            <input type="hidden" name="language" id="language" value="cn"/>
+            <div>
+              <div class="form-group parentCls has-feedback" id="signup_userNameGroup">
+                <label for="sig_email">用户名</label>
+                <input type="text" class="form-control" name="nickname" id="sig_userName" value="" autocomplete="off">
+                <div class="input-item-info"><span class="r-tip">(字母或字母与数字组合)</span></div>
+                <div id="username_text" style="position: relative;left: 92px;color: red"></div>
+                </span><span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+            </div>
+            <div>
+              <div class="form-group has-feedback" id="signup_pswGroup">
+                <label for="sig_password">登录密码</label>
+                <input type="password"  name="password" class="form-control" id="sig_password" autocomplete="new-password">
+                <div class="input-item-info"><span class="r-tip">(至少6位字符，非纯数字)</span></div>
+                <div id="password_text" style="position: relative;left: 82px;color: red"></div>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                <div class="password-level hide clearfix" id="signPswLevel">
+                  <div class="col-md-4"><span id="loWeak">弱</span></div>
+                  <div class="col-md-4"><span id="loNormal">中</span></div>
+                  <div class="col-md-4"><span id="loStrong">强</span></div>
+                </div>
+                <span class="help-block"></span> </div>
+            </div>
+            <div>
+              <div class="form-group has-feedback" id="signup_repswGroup">
+                <label for="sig_password">确认登录密码</label>
+                <input type="password"  name="repassword" class="form-control" id="sig_repassword" autocomplete="new-password">
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+                <div id="repassword_text" style="position: relative;left: 82px;color: red"></div>
+            </div>
+            <div>
+              <div class="form-group parentCls has-feedback" id="signup_emailGroup">
+                <label for="sig_email">邮箱</label>
+                <input type="eamil" class="form-control" name="email" id="sig_email" value="" autocomplete="off">
+                <div class="input-item-info"><span class="r-tip">(邮箱用于验证，请填写您的常用邮箱)</span></div>
+                </span><span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+            </div>
+            <div>
+              <div class="form-group has-feedback" id="fund_pswGroup">
+                <label for="fund_password">资金密码</label>
+                <input type="password"  name="fundpass" class="form-control" id="fund_password" autocomplete="new-password">
+                <div class="input-item-info"><span class="r-tip">(用于提现，请牢记。不可与登录密码相同)</span></div>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+            </div>
+            <div>
+              <div class="form-group has-feedback" id="fund_repswGroup">
+                <label for="fund_password">确认资金密码</label>
+                <input type="password"  name="refundpass" class="form-control" id="fund_repassword" autocomplete="new-password">
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span> <span class="help-block"></span> </div>
+            </div>
+            <div class="form-group has-feedback" id="signup_codeGroup">
+              <label for="captcha_code">图片验证码</label>
+              <div class="clearfix code-box">
+                <input type="text" class="form-control code-input" name="captcha" id="captcha_reg" maxlength="8" autocomplete="off">
+                <div id="codeReg"><img class="cap-img" id="regCaptcha" src="images/captcha_reg.png" alt="Captcha" title="看不清？换一张"/></div>
+                <div class="input-item-info"></div>
+                <span class="help-block"></span> </div>
+            </div>
+            <div class="checkbox clearfix">
+              <label id="agrCheckLabel" class="haschecked pull-left">
+                <input  class="form-control pull-left" type="checkbox" name="agreeCheck" id="agreeCheck" value='1' checked>
+                <span id="agrTxt" class="pull-left">我已阅读并同意</span> </label>
+              <a class="pull-left" target=_blank href='docs/agreement.pdf'>《用户使用协议》</a> </div>
+            <button type="submit" class="btn btn-error btn-block sub-btn" id="signupSub"><span>立即注册</span>
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            </button>
+            <div class="login-tip">
+              <p></p>
+            </div>
+          </form>
+          <div style="clear:both"	></div>
+        </div>
+        <!-- signup --> 
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+</script>
+</body>
+</html>

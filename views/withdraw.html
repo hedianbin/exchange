@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我的账号 - Gate.io - The Gate of Blockchain Assets Exchange</title>
+<meta name="description" content="网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+<meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+<meta name="format-detection" content="telephone=no">
+<!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+<link href="css/style.css?v=1535537699" rel="stylesheet">
+<style>
+.icon-48, .icon-32, .icon-16 {
+	background-image: url("images/coins48.png?v=1535355269")
+}
+</style>
+<link href="css/coins_16.css?v=1535355269" rel="stylesheet">
+<link href="css/coins_32.css?v=1535355269" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png"/>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+<script src="js/cash.js"></script>
+</head>
+<body class="">
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/nav.html")
+	</script>
+<div class="content">
+  <link href="css/usercenter.css?v=1535537948" rel="stylesheet" type="text/css">
+  <div id="nav-left"></div>
+  <script>
+	$("#nav-left").load("html/left.html")
+	</script>
+  <div class="main_content acc-m-con">
+    <div class='right_mcontent myacc-con'>
+      <style>
+    .winput {box-shadow:inset 1px 1px 2px rgba(0,0,0,.1);border-radius:3px;padding:8px 5px;font-size:13px;font-family:'microsoft yahei', sans serif;border:1px solid #ddd;}
+    #tips {display:block}
+    #withdraw_form {margin:10px 0 0; overflow: hidden}
+    .myacc-con .m_title{ margin-bottom: 0; border: none}
+    #wdTabs{border-bottom: 1px solid #a3acb5;}
+    #wdTabs li{ display: inline-block; font-size: 16px;padding: 10px 15px;border: 1px solid transparent;margin-bottom: -1px; cursor: pointer}
+    #wdTabs .wd-active{border: 1px solid #a3acb5;margin-bottom: -1px;border-bottom-color: #fff;cursor: default}
+    #wdTabs li:hover {color: #d45858;}
+    #wdTabs .wd-active:hover{color: #333;}
+    .gate-code-tip{height: 28px;line-height: 60px;margin-left: 25%;}
+    #gateCodeTip,#gcodeFee{ display: none}
+    #amount{ width: 32%}
+    #voicebtn{ margin-left: 10px}
+    #submit_btn{ margin-top: 15px}
+    #wd_amount_tip{ color: #d45858;}
+    #withdrawtable td input{ padding-right: 30px}
+    #addNew .green em{ font-size: 12px; color: #888}
+    #addrUl #addNew i{font-size:20px;line-height:18px;background:#008069;position:absolute;top:-3px;right:0;}
+    #addrUl #addNew i:hover{background: #00a587;}
+</style>
+      <div class="m_title">
+        <h4><%=symbol%> 提现</h4>
+      </div>
+      <div class="sectioncont">
+        <ul id="wdTabs">
+          <li class="wd-active">提现到钱包地址</li>
+          <li id="gateCodeItem">使用充值码方式站内转账</li>
+        </ul>
+        <div class="gate-code-tip"> <span id="gateCodeTip"> 注：<b>充值码</b>(GateCode)只能用于<b>站内账户</b>之间转账。 <a href="https://gateio.io/article/16402" target=_blank><span class=red>如何使用？</span></a> </span> </div>
+        <form name="withdraw_form" id="withdraw_form">
+          <input type="hidden" name="tokenid" id="withdraw_address_id" value="<%=tokenid%>">
+          <table id='withdrawtable'>
+            <tr>
+              <td align="right" width=160>可用余额：</td>
+              <td style="padding-top: 17px;"><span class="red"><%=availbalance%></span> <%=symbol%></td>
+            </tr>
+            <tr>
+              <td align="right">当日提现上限：</td>
+              <td style="padding: 17px 0 10px;"><span class="red"><span id="dayLimit">100000</span> / 100000</span> <%=symbol%>
+                <input type="checkbox" name="makegatecode" id="makegatecode" value='1' hidden></td>
+            </tr>
+            
+            <tr id="addr_tr" class="wd-sh">
+              <td align="right"><%=symbol%>提现地址：</td>
+              <td style="position:relative;"><input type="text" name="addr" id="addr" value="" autocomplete="off" size="50" maxlength="255" placeholder="请输入您的钱包地址">
+                <div class="wd-addr-tip"><%=symbol%>提现地址支持比特币BTC格式和以太坊ETH ERC20格式。</div>
+                <div name="selectaddr" id="selectaddr" class="hide">
+                  <ul id="addrUl">
+                    <div id="addNew"> <a href="javascript:void(0)" onclick="addNewAddr();"><em><span class=green>+添加新地址，使用新地址提现<em>(新地址提现成功后，会添加到此地址记录列表)</em></span></em></a> <i title="添加新地址" onclick="addNewAddr();">+</i> </div>
+                  </ul>
+                </div>
+                <i class="addr-ico"></i></td>
+            </tr>
+            <tr id="addr_memo_tr" class="wd-sh">
+              <td align="right"><b>地址名称：</b></td>
+              <td><input type="text" name="receiver_name" id="receiver_name"
+                           value="" autocomplete="off" placeholder="例如 My Address#1，选填"
+                           maxlength="255">
+                <div class="wd-addr-tip">提现成功后，系统会记住您的提现地址，以便下次使用。填写“地址名称”可便于您分辨钱包地址。</div></td>
+            </tr>
+            <tr class="half-w">
+              <td align="right">提现数额 (币数)：</td>
+              <td><input type="text" value="" size="10" name="amount" id="amount" autocomplete="off">
+                最少 <span id="perMin" class="red">60</span> <%=symbol%>，一次最多 <span class="red">1000000</span> <%=symbol%>
+                <div id="wd_amount_tip"></div></td>
+            </tr>
+            <tr>
+              <td align="right" style="padding: 10px 0">手续费 ：</td>
+              <td style="padding-top: 5px;"><span id="wdFee">0% + 10 <%=symbol%>					
+                （BTC格式地址），10                        <%=symbol%>（ETH格式地址） </span> <span id="gcodeFee">免费</span></td>
+            </tr>
+            <tr>
+              <td align="right">登录密码：</td>
+              <td><input type="password" name="fundpass" id="fundpass" size="20" autocomplete="new-password"></td>
+            </tr>
+            <tr class="half-w">
+              <td class="algin-top" align="right">短信验证码：</td>
+              <td><input type="text" value="" size="10" name="smscode" id="smscode" autocomplete="off">
+                <button name="smsbtn" id="smsbtn" type="button">获取短信验证码</button>
+                <button name="voicebtn" id="voicebtn" type="button">获取电话语音验证码</button>
+                <input type="hidden" name="smsid" value="3" id="smsid"></td>
+            </tr>
+            
+            <tr>
+              <td>&nbsp;</td>
+              <td><button type="submit" class="sub-btn">  提交提现申请 </button></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+        <p class="wd-sh" style="color: #888"><b>提示：</b>在上面的输入框中，输入您要提现的<%=symbol%>钱包地址和<%=symbol%>提现数额，并填写您的资金密码，点击获取短信验证码或电话语音验证码之后，把收到的验证码填入。在确认填写无误后，点击“提交提现申请”按钮提交。您的申请将立即或者几小时内被处理。</p>
+      </div>
+      <div class="m_title">
+        <h4>最近 10 次提现记录</h4>
+      </div>
+      <div class="sectioncont">
+        <table class='sf-grid'>
+          <thead>
+            <tr>
+              <td align='right' width="10%"><b>单号</b></td>
+              <td align='right'><b>提现地址(转账号码)</b></td>
+              <td align='right' width="15%"><b>金额</b></td>
+              <td align='right' width="20%"><b>提现时间</b></td>
+              <td align='right' width="15%"><b>状态/操作</b></td>
+            </tr>
+			  <% list.forEach(function(order){ %>
+			  <tr>
+              <td align='right' width="10%"><b><%= order.id %></b></td>
+              <td align='right'><b><%= order.toaddress %></b></td>
+              <td align='right' width="15%"><%= order.count %></td>
+              <td align='right' width="20%"><b><%= order.createtime %></b></td>
+              <td align='right' width="15%"><b>成功</b></td>
+            </tr>
+			<% }) %>
+          </thead>
+        </table>
+      </div>
+      <br>
+      <br>
+      <br />
+    </div>
+    <!-- right_mcontent --> 
+  </div>
+  <!-- main content --> 
+  
+</div>
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+</script>
+</body>
+</html>

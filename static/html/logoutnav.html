@@ -1,0 +1,463 @@
+<div class="header clearfix">
+  <div class="top-up">
+    <div class="top-con">
+      <ul class="topprice">
+        <li> BTC/CNY : ￥ <span class="topnum">44880.86</span><i class="icon-arrow-up">&uarr;</i> </li>
+        <li> ETH/CNY : ￥ <span class="topnum">1891.58</span><i class="icon-arrow-up">&uarr;</i> </li>
+        <li> LTC/CNY : ￥ <span class="topnum">386.56</span><i class="icon-arrow-up">&uarr;</i> </li>
+        <li> QTUM/CNY : ￥ <span class="topnum">28.33</span><i class="icon-arrow-up">&uarr;</i> </li>
+      </ul>
+      <div class="qqtel"> <a class="ask_ans" href="https://twitter.com/gate_io" target="_blank">
+        <p> <i class="tico"><img src="images/tw.svg" alt="Twitter" /></i> <span>Twitter</span> </p>
+        </a> <a class="ask_ans" href="https://t.me/gate_io" target="_blank">
+        <p> <i class="tico"><img src="images/telegram.svg" alt="Telegram" /></i> <span>Telegram</span> </p>
+        </a> <a class="ask_ans" href="javascript:ticketsRoute();">
+        <p> <i>?</i> <span>提交工单</span> </p>
+        </a> <a id="callService" class="ask_ans curr-active" href="javascript:unLoginTip(1);">
+        <p> <i class="serv-icon tico"><img src="images/serv-icon.svg" alt="客服" /></i> <span>在线客服</span> </p>
+        </a> </div>
+      <ul class="login_lan">
+        <li class="toplogin"><a href="signup">注册&nbsp;</a>|&nbsp; </li>
+        <li class="toplogin" id="toplogin"><a href="login">登录</a></li>
+        <li class="lang-option"> <span>中文版</span><i class="caret"></i>
+          <div class="more-lan"> <a href="lang/en">English</a> <a href="lang/kr">한국어</a> </div>
+        </li>
+      </ul>
+      <ul id="theme" class="clearfix">
+        <li id="dark" title="深色主题">☽</li>
+        <li id="light" title="浅色主题">☼</li>
+      </ul>
+      <ul id="topLinks">
+        <li class="top-links"> <a href="mobileapp" target="_blank"> <span>APP下载<i class="caret"></i></span>
+          <div class="add-dn-qr">
+            <h3>扫码下载gate.io APP</h3>
+            <img src="images/app-code.png" alt="gate.io APP"> </div>
+          </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div class="top-dn">
+    <div class="logo"> <a href="https://gateio.io" target="_top"> 
+      <![if !IE]><img src="images/logo.svg" alt="gate.io LOGO"/><![endif]> 
+      <!--[if IE]><img src="images/logo.png" alt="LOGO"/><![endif]--> 
+      </a> </div>
+    <ul class="gateio-nav">
+      <li class=""> <a href="/">首页</a> </li>
+      <li class=""> <a href="c2c/usdt_cny" class="tooltip joyride-lead" title="法币交易">C2C交易</a> </li>
+      <li class="nav-trade-item "> <a href="javascript:goLogin()">币币交易<i class="caret"></i></a>
+        <ul class="second-nav clearfix">
+          <li> <a href="javascript:;">对BTC交易区<i class="caret"></i></a>
+            <ul class="third-nav clearfix">
+              <li><a href='trade/ADA_BTC'><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+              <li><a href='trade/AE_BTC'><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+              <li><a href='trade/BAT_BTC'><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+              <li><a href='trade/BCD_BTC'><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+              <li><a href='trade/BCH_BTC'><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+              <li><a href='trade/BCX_BTC'><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+              <li><a href='trade/BIFI_BTC'><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+              <li><a href='trade/BTF_BTC'><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+              <li><a href='trade/BTG_BTC'><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+              <li><a href='trade/BTM_BTC'><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+              <li><a href='trade/BTS_BTC'><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+              <li><a href='trade/BU_BTC'><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+              <li><a href='trade/DASH_BTC'><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+              <li><a href='trade/DBC_BTC'><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+              <li><a href='trade/DDD_BTC'><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+              <li><a href='trade/DOGE_BTC'><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+              <li><a href='trade/EOS_BTC'><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+              <li><a href='trade/ETC_BTC'><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+              <li><a href='trade/ETH_BTC'><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+              <li><a href='trade/GAS_BTC'><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+              <li><a href='trade/GOD_BTC'><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+              <li><a href='trade/GTC_BTC'><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+              <li><a href='trade/GXS_BTC'><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+              <li><a href='trade/HC_BTC'><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+              <li><a href='trade/HSR_BTC'><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+              <li><a href='trade/INK_BTC'><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+              <li><a href='trade/IOTA_BTC'><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+              <li><a href='trade/JNT_BTC'><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+              <li><a href='trade/LEDU_BTC'><span class="icon-16-ledu icon-16"></span><strong>Education LEDU</strong></a></li>
+              <li><a href='trade/LRC_BTC'><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+              <li><a href='trade/LSK_BTC'><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+              <li><a href='trade/LTC_BTC'><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+              <li><a href='trade/LYM_BTC'><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+              <li><a href='trade/MDT_BTC'><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+              <li><a href='trade/MOBI_BTC'><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+              <li><a href='trade/NANO_BTC'><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+              <li><a href='trade/NAS_BTC'><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+              <li><a href='trade/NEO_BTC'><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+              <li><a href='trade/OCN_BTC'><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+              <li><a href='trade/OMG_BTC'><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+              <li><a href='trade/PAY_BTC'><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+              <li><a href='trade/POWR_BTC'><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+              <li><a href='trade/QASH_BTC'><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+              <li><a href='trade/QLC_BTC'><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+              <li><a href='trade/QTUM_BTC'><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+              <li><a href='trade/RUFF_BTC'><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+              <li><a href='trade/SBTC_BTC'><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+              <li><a href='trade/SNT_BTC'><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+              <li><a href='trade/STORJ_BTC'><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+              <li><a href='trade/TNC_BTC'><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+              <li><a href='trade/WAVES_BTC'><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+              <li><a href='trade/XLM_BTC'><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+              <li><a href='trade/XMC_BTC'><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+              <li><a href='trade/XMR_BTC'><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+              <li><a href='trade/XRP_BTC'><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+              <li><a href='trade/XTZ_BTC'><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+              <li><a href='trade/XVG_BTC'><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+              <li><a href='trade/ZEC_BTC'><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+              <li><a href='trade/ZPT_BTC'><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+              <li><a href='trade/ZRX_BTC'><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+            </ul>
+          </li>
+          <li> <a href="javascript:;">对ETH交易区<i class="caret"></i></a>
+            <ul class="third-nav clearfix">
+              <li><a href='trade/ABT_ETH'><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+              <li><a href='trade/AE_ETH'><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+              <li><a href='trade/ARN_ETH'><span class="icon-16-arn icon-16"></span><strong>Aeron ARN</strong></a></li>
+              <li><a href='trade/BAT_ETH'><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+              <li><a href='trade/BCDN_ETH'><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+              <li><a href='trade/BFT_ETH'><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+              <li><a href='trade/BLZ_ETH'><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+              <li><a href='trade/BNT_ETH'><span class="icon-16-bnt icon-16"></span><strong>Bancor BNT</strong></a></li>
+              <li><a href='trade/BNTY_ETH'><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+              <li><a href='trade/BOE_ETH'><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+              <li><a href='trade/BOT_ETH'><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+              <li><a href='trade/BTM_ETH'><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+              <li><a href='trade/BTO_ETH'><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+              <li><a href='trade/BU_ETH'><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+              <li><a href='trade/CDT_ETH'><span class="icon-16-cdt icon-16"></span><strong>CoinDash CDT</strong></a></li>
+              <li><a href='trade/COFI_ETH'><span class="icon-16-cofi icon-16"></span><strong>CoinFi COFI</strong></a></li>
+              <li><a href='trade/CS_ETH'><span class="icon-16-cs icon-16"></span><strong>Credits CS</strong></a></li>
+              <li><a href='trade/CVC_ETH'><span class="icon-16-cvc icon-16"></span><strong>Civic CVC</strong></a></li>
+              <li><a href='trade/DADI_ETH'><span class="icon-16-dadi icon-16"></span><strong>DADI DADI</strong></a></li>
+              <li><a href='trade/DATA_ETH'><span class="icon-16-data icon-16"></span><strong>Streamr DATA</strong></a></li>
+              <li><a href='trade/DBC_ETH'><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+              <li><a href='trade/DDD_ETH'><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+              <li><a href='trade/DGD_ETH'><span class="icon-16-dgd icon-16"></span><strong>DigixDAO DGD</strong></a></li>
+              <li><a href='trade/DNT_ETH'><span class="icon-16-dnt icon-16"></span><strong>district0x DNT</strong></a></li>
+              <li><a href='trade/DOCK_ETH'><span class="icon-16-dock icon-16"></span><strong>Dock DOCK</strong></a></li>
+              <li><a href='trade/DPY_ETH'><span class="icon-16-dpy icon-16"></span><strong>Delphy DPY</strong></a></li>
+              <li><a href='trade/DRGN_ETH'><span class="icon-16-drgn icon-16"></span><strong>DragonChain DRGN</strong></a></li>
+              <li><a href='trade/DX_ETH'><span class="icon-16-dx icon-16"></span><strong>DxChain DX</strong></a></li>
+              <li><a href='trade/ELEC_ETH'><span class="icon-16-elec icon-16"></span><strong>ElectrifyAsia ELEC</strong></a></li>
+              <li><a href='trade/ELF_ETH'><span class="icon-16-elf icon-16"></span><strong>aelf ELF</strong></a></li>
+              <li><a href='trade/EOS_ETH'><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+              <li><a href='trade/EOSDAC_ETH'><span class="icon-16-eosdac icon-16"></span><strong>eosDAC EOSDAC</strong></a></li>
+              <li><a href='trade/ETC_ETH'><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+              <li><a href='trade/FTI_ETH'><span class="icon-16-fti icon-16"></span><strong>FansTime FTI</strong></a></li>
+              <li><a href='trade/FUEL_ETH'><span class="icon-16-fuel icon-16"></span><strong>Etherparty FUEL</strong></a></li>
+              <li><a href='trade/FUN_ETH'><span class="icon-16-fun icon-16"></span><strong>FunFair FUN</strong></a></li>
+              <li><a href='trade/GARD_ETH'><span class="icon-16-gard icon-16"></span><strong>临界 GARD</strong></a></li>
+              <li><a href='trade/GEM_ETH'><span class="icon-16-gem icon-16"></span><strong>Gems GEM</strong></a></li>
+              <li><a href='trade/GNT_ETH'><span class="icon-16-gnt icon-16"></span><strong>Golem GNT</strong></a></li>
+              <li><a href='trade/GNX_ETH'><span class="icon-16-gnx icon-16"></span><strong>Genaro GNX</strong></a></li>
+              <li><a href='trade/GSE_ETH'><span class="icon-16-gse icon-16"></span><strong>GSENetwork GSE</strong></a></li>
+              <li><a href='trade/GTC_ETH'><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+              <li><a href='trade/HAV_ETH'><span class="icon-16-hav icon-16"></span><strong>Havven HAV</strong></a></li>
+              <li><a href='trade/HC_ETH'><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+              <li><a href='trade/HIT_ETH'><span class="icon-16-hit icon-16"></span><strong>Hitchain HIT</strong></a></li>
+              <li><a href='trade/HSC_ETH'><span class="icon-16-hsc icon-16"></span><strong>哈希币 HSC</strong></a></li>
+              <li><a href='trade/HSR_ETH'><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+              <li><a href='trade/ICX_ETH'><span class="icon-16-icx icon-16"></span><strong>ICON ICX</strong></a></li>
+              <li><a href='trade/IHT_ETH'><span class="icon-16-iht icon-16"></span><strong>云产币 IHT</strong></a></li>
+              <li><a href='trade/INK_ETH'><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+              <li><a href='trade/IOTX_ETH'><span class="icon-16-iotx icon-16"></span><strong>IoTeX IOTX</strong></a></li>
+              <li><a href='trade/JNT_ETH'><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+              <li><a href='trade/KICK_ETH'><span class="icon-16-kick icon-16"></span><strong>KickCoin KICK</strong></a></li>
+              <li><a href='trade/KNC_ETH'><span class="icon-16-knc icon-16"></span><strong>Kyber KNC</strong></a></li>
+              <li><a href='trade/LBA_ETH'><span class="icon-16-lba icon-16"></span><strong>LibraCredit LBA</strong></a></li>
+              <li><a href='trade/LEDU_ETH'><span class="icon-16-ledu icon-16"></span><strong>Education LEDU</strong></a></li>
+              <li><a href='trade/LEMO_ETH'><span class="icon-16-lemo icon-16"></span><strong>Lemo LEMO</strong></a></li>
+              <li><a href='trade/LEND_ETH'><span class="icon-16-lend icon-16"></span><strong>ETHLend LEND</strong></a></li>
+              <li><a href='trade/LINK_ETH'><span class="icon-16-link icon-16"></span><strong>ChainLink LINK</strong></a></li>
+              <li><a href='trade/LLT_ETH'><span class="icon-16-llt icon-16"></span><strong>流量币 LLT</strong></a></li>
+              <li><a href='trade/LRC_ETH'><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+              <li><a href='trade/LRN_ETH'><span class="icon-16-lrn icon-16"></span><strong>路印NEO LRN</strong></a></li>
+              <li><a href='trade/LUN_ETH'><span class="icon-16-lun icon-16"></span><strong>Lunyr LUN</strong></a></li>
+              <li><a href='trade/LYM_ETH'><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+              <li><a href='trade/MAN_ETH'><span class="icon-16-man icon-16"></span><strong>MatrixAI MAN</strong></a></li>
+              <li><a href='trade/MANA_ETH'><span class="icon-16-mana icon-16"></span><strong>Decentraland MANA</strong></a></li>
+              <li><a href='trade/MCO_ETH'><span class="icon-16-mco icon-16"></span><strong>Monaco MCO</strong></a></li>
+              <li><a href='trade/MDA_ETH'><span class="icon-16-mda icon-16"></span><strong>Moeda MDA</strong></a></li>
+              <li><a href='trade/MDS_ETH'><span class="icon-16-mds icon-16"></span><strong>MediShares MDS</strong></a></li>
+              <li><a href='trade/MDT_ETH'><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+              <li><a href='trade/MED_ETH'><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+              <li><a href='trade/MEDX_ETH'><span class="icon-16-medx icon-16"></span><strong>MediBlocX MEDX</strong></a></li>
+              <li><a href='trade/MET_ETH'><span class="icon-16-met icon-16"></span><strong>Metronome MET</strong></a></li>
+              <li><a href='trade/MITH_ETH'><span class="icon-16-mith icon-16"></span><strong>秘银币 MITH</strong></a></li>
+              <li><a href='trade/MKR_ETH'><span class="icon-16-mkr icon-16"></span><strong>MakerDAO MKR</strong></a></li>
+              <li><a href='trade/MOBI_ETH'><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+              <li><a href='trade/MTN_ETH'><span class="icon-16-mtn icon-16"></span><strong>Medicalchain MTN</strong></a></li>
+              <li><a href='trade/NAS_ETH'><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+              <li><a href='trade/NKN_ETH'><span class="icon-16-nkn icon-16"></span><strong>NKN NKN</strong></a></li>
+              <li><a href='trade/OAX_ETH'><span class="icon-16-oax icon-16"></span><strong>ANX OAX</strong></a></li>
+              <li><a href='trade/OCN_ETH'><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+              <li><a href='trade/OMG_ETH'><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+              <li><a href='trade/ONT_ETH'><span class="icon-16-ont icon-16"></span><strong>本体 ONT</strong></a></li>
+              <li><a href='trade/OPEN_ETH'><span class="icon-16-open icon-16"></span><strong>OpenPlatform OPEN</strong></a></li>
+              <li><a href='trade/OST_ETH'><span class="icon-16-ost icon-16"></span><strong>SimpleToken OST</strong></a></li>
+              <li><a href='trade/PAY_ETH'><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+              <li><a href='trade/POWR_ETH'><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+              <li><a href='trade/PST_ETH'><span class="icon-16-pst icon-16"></span><strong>Primas PST</strong></a></li>
+              <li><a href='trade/QASH_ETH'><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+              <li><a href='trade/QBT_ETH'><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+              <li><a href='trade/QKC_ETH'><span class="icon-16-qkc icon-16"></span><strong>夸克链 QKC</strong></a></li>
+              <li><a href='trade/QLC_ETH'><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+              <li><a href='trade/QSP_ETH'><span class="icon-16-qsp icon-16"></span><strong>Quantstamp QSP</strong></a></li>
+              <li><a href='trade/QTUM_ETH'><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+              <li><a href='trade/RATING_ETH'><span class="icon-16-rating icon-16"></span><strong>大炮评级 RATING</strong></a></li>
+              <li><a href='trade/RCN_ETH'><span class="icon-16-rcn icon-16"></span><strong>Ripio RCN</strong></a></li>
+              <li><a href='trade/RDN_ETH'><span class="icon-16-rdn icon-16"></span><strong>雷电网络 RDN</strong></a></li>
+              <li><a href='trade/RED_ETH'><span class="icon-16-red icon-16"></span><strong>RedLang RED</strong></a></li>
+              <li><a href='trade/REM_ETH'><span class="icon-16-rem icon-16"></span><strong>Remme REM</strong></a></li>
+              <li><a href='trade/REP_ETH'><span class="icon-16-rep icon-16"></span><strong>Augur REP</strong></a></li>
+              <li><a href='trade/REQ_ETH'><span class="icon-16-req icon-16"></span><strong>Request REQ</strong></a></li>
+              <li><a href='trade/RFR_ETH'><span class="icon-16-rfr icon-16"></span><strong>Refereum RFR</strong></a></li>
+              <li><a href='trade/RLC_ETH'><span class="icon-16-rlc icon-16"></span><strong>iExec RLC</strong></a></li>
+              <li><a href='trade/RUFF_ETH'><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+              <li><a href='trade/SALT_ETH'><span class="icon-16-salt icon-16"></span><strong>SALT  SALT</strong></a></li>
+              <li><a href='trade/SENC_ETH'><span class="icon-16-senc icon-16"></span><strong>Sentinel SENC</strong></a></li>
+              <li><a href='trade/SKM_ETH'><span class="icon-16-skm icon-16"></span><strong>Skrumble SKM</strong></a></li>
+              <li><a href='trade/SMT_ETH'><span class="icon-16-smt icon-16"></span><strong>SmartMesh SMT</strong></a></li>
+              <li><a href='trade/SNET_ETH'><span class="icon-16-snet icon-16"></span><strong>Snetwork SNET</strong></a></li>
+              <li><a href='trade/SNT_ETH'><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+              <li><a href='trade/SOP_ETH'><span class="icon-16-sop icon-16"></span><strong>SoPay SOP</strong></a></li>
+              <li><a href='trade/SOUL_ETH'><span class="icon-16-soul icon-16"></span><strong>Phantasma SOUL</strong></a></li>
+              <li><a href='trade/STORJ_ETH'><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+              <li><a href='trade/STX_ETH'><span class="icon-16-stx icon-16"></span><strong>Stox STX</strong></a></li>
+              <li><a href='trade/SWTH_ETH'><span class="icon-16-swth icon-16"></span><strong>Switcheo SWTH</strong></a></li>
+              <li><a href='trade/TCT_ETH'><span class="icon-16-tct icon-16"></span><strong>TokenClub TCT</strong></a></li>
+              <li><a href='trade/THETA_ETH'><span class="icon-16-theta icon-16"></span><strong>Theta THETA</strong></a></li>
+              <li><a href='trade/TIO_ETH'><span class="icon-16-tio icon-16"></span><strong>trade.io TIO</strong></a></li>
+              <li><a href='trade/TIPS_ETH'><span class="icon-16-tips icon-16"></span><strong>帽子币 TIPS</strong></a></li>
+              <li><a href='trade/TNC_ETH'><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+              <li><a href='trade/TNT_ETH'><span class="icon-16-tnt icon-16"></span><strong>Tierion  TNT</strong></a></li>
+              <li><a href='trade/TOMO_ETH'><span class="icon-16-tomo icon-16"></span><strong>TomoChain TOMO</strong></a></li>
+              <li><a href='trade/TRX_ETH'><span class="icon-16-trx icon-16"></span><strong>波场 TRX</strong></a></li>
+              <li><a href='trade/VET_ETH'><span class="icon-16-vet icon-16"></span><strong>唯链 VET</strong></a></li>
+              <li><a href='trade/WINGS_ETH'><span class="icon-16-wings icon-16"></span><strong>Wings WINGS</strong></a></li>
+              <li><a href='trade/XLM_ETH'><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+              <li><a href='trade/XTZ_ETH'><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+              <li><a href='trade/ZIL_ETH'><span class="icon-16-zil icon-16"></span><strong>Zilliqa ZIL</strong></a></li>
+              <li><a href='trade/ZPT_ETH'><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+              <li><a href='trade/ZRX_ETH'><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+              <li><a href='trade/ZSC_ETH'><span class="icon-16-zsc icon-16"></span><strong>宙斯盾 ZSC</strong></a></li>
+            </ul>
+          </li>
+          <li> <a href="javascript:;">对USDT交易区<i class="caret"></i></a>
+            <ul class="third-nav clearfix">
+              <li><a href='trade/ABT_USDT'><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+              <li><a href='trade/ADA_USDT'><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+              <li><a href='trade/AE_USDT'><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+              <li><a href='trade/BAT_USDT'><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+              <li><a href='trade/BCD_USDT'><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+              <li><a href='trade/BCDN_USDT'><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+              <li><a href='trade/BCH_USDT'><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+              <li><a href='trade/BCX_USDT'><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+              <li><a href='trade/BFT_USDT'><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+              <li><a href='trade/BIFI_USDT'><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+              <li><a href='trade/BLZ_USDT'><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+              <li><a href='trade/BNTY_USDT'><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+              <li><a href='trade/BOE_USDT'><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+              <li><a href='trade/BOT_USDT'><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+              <li><a href='trade/BTC_USDT'><span class="icon-16-btc icon-16"></span><strong>比特币 BTC</strong></a></li>
+              <li><a href='trade/BTF_USDT'><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+              <li><a href='trade/BTG_USDT'><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+              <li><a href='trade/BTM_USDT'><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+              <li><a href='trade/BTO_USDT'><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+              <li><a href='trade/BTS_USDT'><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+              <li><a href='trade/BU_USDT'><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+              <li><a href='trade/CDT_USDT'><span class="icon-16-cdt icon-16"></span><strong>CoinDash CDT</strong></a></li>
+              <li><a href='trade/COFI_USDT'><span class="icon-16-cofi icon-16"></span><strong>CoinFi COFI</strong></a></li>
+              <li><a href='trade/CS_USDT'><span class="icon-16-cs icon-16"></span><strong>Credits CS</strong></a></li>
+              <li><a href='trade/CVC_USDT'><span class="icon-16-cvc icon-16"></span><strong>Civic CVC</strong></a></li>
+              <li><a href='trade/DADI_USDT'><span class="icon-16-dadi icon-16"></span><strong>DADI DADI</strong></a></li>
+              <li><a href='trade/DAI_USDT'><span class="icon-16-dai icon-16"></span><strong>Dai DAI</strong></a></li>
+              <li><a href='trade/DASH_USDT'><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+              <li><a href='trade/DATA_USDT'><span class="icon-16-data icon-16"></span><strong>Streamr DATA</strong></a></li>
+              <li><a href='trade/DBC_USDT'><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+              <li><a href='trade/DDD_USDT'><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+              <li><a href='trade/DGD_USDT'><span class="icon-16-dgd icon-16"></span><strong>DigixDAO DGD</strong></a></li>
+              <li><a href='trade/DOCK_USDT'><span class="icon-16-dock icon-16"></span><strong>Dock DOCK</strong></a></li>
+              <li><a href='trade/DOGE_USDT'><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+              <li><a href='trade/DPY_USDT'><span class="icon-16-dpy icon-16"></span><strong>Delphy DPY</strong></a></li>
+              <li><a href='trade/DRGN_USDT'><span class="icon-16-drgn icon-16"></span><strong>DragonChain DRGN</strong></a></li>
+              <li><a href='trade/DX_USDT'><span class="icon-16-dx icon-16"></span><strong>DxChain DX</strong></a></li>
+              <li><a href='trade/ELEC_USDT'><span class="icon-16-elec icon-16"></span><strong>ElectrifyAsia ELEC</strong></a></li>
+              <li><a href='trade/ELF_USDT'><span class="icon-16-elf icon-16"></span><strong>aelf ELF</strong></a></li>
+              <li><a href='trade/EOS_USDT'><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+              <li><a href='trade/EOSDAC_USDT'><span class="icon-16-eosdac icon-16"></span><strong>eosDAC EOSDAC</strong></a></li>
+              <li><a href='trade/ETC_USDT'><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+              <li><a href='trade/ETH_USDT'><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+              <li><a href='trade/FIL_USDT'><span class="icon-16-fil icon-16"></span><strong>IPFS六月 FIL</strong></a></li>
+              <li><a href='trade/FTI_USDT'><span class="icon-16-fti icon-16"></span><strong>FansTime FTI</strong></a></li>
+              <li><a href='trade/FUEL_USDT'><span class="icon-16-fuel icon-16"></span><strong>Etherparty FUEL</strong></a></li>
+              <li><a href='trade/FUN_USDT'><span class="icon-16-fun icon-16"></span><strong>FunFair FUN</strong></a></li>
+              <li><a href='trade/GARD_USDT'><span class="icon-16-gard icon-16"></span><strong>临界 GARD</strong></a></li>
+              <li><a href='trade/GAS_USDT'><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+              <li><a href='trade/GEM_USDT'><span class="icon-16-gem icon-16"></span><strong>Gems GEM</strong></a></li>
+              <li><a href='trade/GNT_USDT'><span class="icon-16-gnt icon-16"></span><strong>Golem GNT</strong></a></li>
+              <li><a href='trade/GNX_USDT'><span class="icon-16-gnx icon-16"></span><strong>Genaro GNX</strong></a></li>
+              <li><a href='trade/GOD_USDT'><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+              <li><a href='trade/GSE_USDT'><span class="icon-16-gse icon-16"></span><strong>GSENetwork GSE</strong></a></li>
+              <li><a href='trade/GTC_USDT'><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+              <li><a href='trade/GXS_USDT'><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+              <li><a href='trade/HAV_USDT'><span class="icon-16-hav icon-16"></span><strong>Havven HAV</strong></a></li>
+              <li><a href='trade/HC_USDT'><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+              <li><a href='trade/HIT_USDT'><span class="icon-16-hit icon-16"></span><strong>Hitchain HIT</strong></a></li>
+              <li><a href='trade/HSC_USDT'><span class="icon-16-hsc icon-16"></span><strong>哈希币 HSC</strong></a></li>
+              <li><a href='trade/HSR_USDT'><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+              <li><a href='trade/ICX_USDT'><span class="icon-16-icx icon-16"></span><strong>ICON ICX</strong></a></li>
+              <li><a href='trade/IHT_USDT'><span class="icon-16-iht icon-16"></span><strong>云产币 IHT</strong></a></li>
+              <li><a href='trade/INK_USDT'><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+              <li><a href='trade/IOTA_USDT'><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+              <li><a href='trade/IOTX_USDT'><span class="icon-16-iotx icon-16"></span><strong>IoTeX IOTX</strong></a></li>
+              <li><a href='trade/JNT_USDT'><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+              <li><a href='trade/KICK_USDT'><span class="icon-16-kick icon-16"></span><strong>KickCoin KICK</strong></a></li>
+              <li><a href='trade/KNC_USDT'><span class="icon-16-knc icon-16"></span><strong>Kyber KNC</strong></a></li>
+              <li><a href='trade/LBA_USDT'><span class="icon-16-lba icon-16"></span><strong>LibraCredit LBA</strong></a></li>
+              <li><a href='trade/LEMO_USDT'><span class="icon-16-lemo icon-16"></span><strong>Lemo LEMO</strong></a></li>
+              <li><a href='trade/LEND_USDT'><span class="icon-16-lend icon-16"></span><strong>ETHLend LEND</strong></a></li>
+              <li><a href='trade/LINK_USDT'><span class="icon-16-link icon-16"></span><strong>ChainLink LINK</strong></a></li>
+              <li><a href='trade/LRC_USDT'><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+              <li><a href='trade/LRN_USDT'><span class="icon-16-lrn icon-16"></span><strong>路印NEO LRN</strong></a></li>
+              <li><a href='trade/LSK_USDT'><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+              <li><a href='trade/LTC_USDT'><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+              <li><a href='trade/LUN_USDT'><span class="icon-16-lun icon-16"></span><strong>Lunyr LUN</strong></a></li>
+              <li><a href='trade/LYM_USDT'><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+              <li><a href='trade/MAN_USDT'><span class="icon-16-man icon-16"></span><strong>MatrixAI MAN</strong></a></li>
+              <li><a href='trade/MANA_USDT'><span class="icon-16-mana icon-16"></span><strong>Decentraland MANA</strong></a></li>
+              <li><a href='trade/MCO_USDT'><span class="icon-16-mco icon-16"></span><strong>Monaco MCO</strong></a></li>
+              <li><a href='trade/MDA_USDT'><span class="icon-16-mda icon-16"></span><strong>Moeda MDA</strong></a></li>
+              <li><a href='trade/MDS_USDT'><span class="icon-16-mds icon-16"></span><strong>MediShares MDS</strong></a></li>
+              <li><a href='trade/MDT_USDT'><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+              <li><a href='trade/MED_USDT'><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+              <li><a href='trade/MEDX_USDT'><span class="icon-16-medx icon-16"></span><strong>MediBlocX MEDX</strong></a></li>
+              <li><a href='trade/MET_USDT'><span class="icon-16-met icon-16"></span><strong>Metronome MET</strong></a></li>
+              <li><a href='trade/MITH_USDT'><span class="icon-16-mith icon-16"></span><strong>秘银币 MITH</strong></a></li>
+              <li><a href='trade/MKR_USDT'><span class="icon-16-mkr icon-16"></span><strong>MakerDAO MKR</strong></a></li>
+              <li><a href='trade/MOBI_USDT'><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+              <li><a href='trade/MTN_USDT'><span class="icon-16-mtn icon-16"></span><strong>Medicalchain MTN</strong></a></li>
+              <li><a href='trade/NANO_USDT'><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+              <li><a href='trade/NAS_USDT'><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+              <li><a href='trade/NEO_USDT'><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+              <li><a href='trade/NKN_USDT'><span class="icon-16-nkn icon-16"></span><strong>NKN NKN</strong></a></li>
+              <li><a href='trade/OCN_USDT'><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+              <li><a href='trade/OMG_USDT'><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+              <li><a href='trade/ONT_USDT'><span class="icon-16-ont icon-16"></span><strong>本体 ONT</strong></a></li>
+              <li><a href='trade/OPEN_USDT'><span class="icon-16-open icon-16"></span><strong>OpenPlatform OPEN</strong></a></li>
+              <li><a href='trade/OST_USDT'><span class="icon-16-ost icon-16"></span><strong>SimpleToken OST</strong></a></li>
+              <li><a href='trade/PAY_USDT'><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+              <li><a href='trade/POWR_USDT'><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+              <li><a href='trade/PST_USDT'><span class="icon-16-pst icon-16"></span><strong>Primas PST</strong></a></li>
+              <li><a href='trade/QASH_USDT'><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+              <li><a href='trade/QBT_USDT'><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+              <li><a href='trade/QKC_USDT'><span class="icon-16-qkc icon-16"></span><strong>夸克链 QKC</strong></a></li>
+              <li><a href='trade/QLC_USDT'><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+              <li><a href='trade/QSP_USDT'><span class="icon-16-qsp icon-16"></span><strong>Quantstamp QSP</strong></a></li>
+              <li><a href='trade/QTUM_USDT'><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+              <li><a href='trade/RATING_USDT'><span class="icon-16-rating icon-16"></span><strong>大炮评级 RATING</strong></a></li>
+              <li><a href='trade/RCN_USDT'><span class="icon-16-rcn icon-16"></span><strong>Ripio RCN</strong></a></li>
+              <li><a href='trade/RDN_USDT'><span class="icon-16-rdn icon-16"></span><strong>雷电网络 RDN</strong></a></li>
+              <li><a href='trade/RED_USDT'><span class="icon-16-red icon-16"></span><strong>RedLang RED</strong></a></li>
+              <li><a href='trade/REM_USDT'><span class="icon-16-rem icon-16"></span><strong>Remme REM</strong></a></li>
+              <li><a href='trade/REQ_USDT'><span class="icon-16-req icon-16"></span><strong>Request REQ</strong></a></li>
+              <li><a href='trade/RFR_USDT'><span class="icon-16-rfr icon-16"></span><strong>Refereum RFR</strong></a></li>
+              <li><a href='trade/RLC_USDT'><span class="icon-16-rlc icon-16"></span><strong>iExec RLC</strong></a></li>
+              <li><a href='trade/RUFF_USDT'><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+              <li><a href='trade/SALT_USDT'><span class="icon-16-salt icon-16"></span><strong>SALT  SALT</strong></a></li>
+              <li><a href='trade/SBTC_USDT'><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+              <li><a href='trade/SENC_USDT'><span class="icon-16-senc icon-16"></span><strong>Sentinel SENC</strong></a></li>
+              <li><a href='trade/SKM_USDT'><span class="icon-16-skm icon-16"></span><strong>Skrumble SKM</strong></a></li>
+              <li><a href='trade/SMT_USDT'><span class="icon-16-smt icon-16"></span><strong>SmartMesh SMT</strong></a></li>
+              <li><a href='trade/SNET_USDT'><span class="icon-16-snet icon-16"></span><strong>Snetwork SNET</strong></a></li>
+              <li><a href='trade/SNT_USDT'><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+              <li><a href='trade/SOP_USDT'><span class="icon-16-sop icon-16"></span><strong>SoPay SOP</strong></a></li>
+              <li><a href='trade/SOUL_USDT'><span class="icon-16-soul icon-16"></span><strong>Phantasma SOUL</strong></a></li>
+              <li><a href='trade/STORJ_USDT'><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+              <li><a href='trade/STX_USDT'><span class="icon-16-stx icon-16"></span><strong>Stox STX</strong></a></li>
+              <li><a href='trade/SWTH_USDT'><span class="icon-16-swth icon-16"></span><strong>Switcheo SWTH</strong></a></li>
+              <li><a href='trade/TCT_USDT'><span class="icon-16-tct icon-16"></span><strong>TokenClub TCT</strong></a></li>
+              <li><a href='trade/THETA_USDT'><span class="icon-16-theta icon-16"></span><strong>Theta THETA</strong></a></li>
+              <li><a href='trade/TIO_USDT'><span class="icon-16-tio icon-16"></span><strong>trade.io TIO</strong></a></li>
+              <li><a href='trade/TNC_USDT'><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+              <li><a href='trade/TNT_USDT'><span class="icon-16-tnt icon-16"></span><strong>Tierion  TNT</strong></a></li>
+              <li><a href='trade/TOMO_USDT'><span class="icon-16-tomo icon-16"></span><strong>TomoChain TOMO</strong></a></li>
+              <li><a href='trade/TRX_USDT'><span class="icon-16-trx icon-16"></span><strong>波场 TRX</strong></a></li>
+              <li><a href='trade/TSL_USDT'><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+              <li><a href='trade/VET_USDT'><span class="icon-16-vet icon-16"></span><strong>唯链 VET</strong></a></li>
+              <li><a href='trade/WAVES_USDT'><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+              <li><a href='trade/XLM_USDT'><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+              <li><a href='trade/XMC_USDT'><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+              <li><a href='trade/XMR_USDT'><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+              <li><a href='trade/XRP_USDT'><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+              <li><a href='trade/XTZ_USDT'><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+              <li><a href='trade/XVG_USDT'><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+              <li><a href='trade/ZEC_USDT'><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+              <li><a href='trade/ZIL_USDT'><span class="icon-16-zil icon-16"></span><strong>Zilliqa ZIL</strong></a></li>
+              <li><a href='trade/ZPT_USDT'><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+              <li><a href='trade/ZRX_USDT'><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+              <li><a href='trade/ZSC_USDT'><span class="icon-16-zsc icon-16"></span><strong>宙斯盾 ZSC</strong></a></li>
+            </ul>
+          </li>
+          <li> <a href="javascript:;">对QTUM交易区<i class="caret"></i></a>
+            <ul class="third-nav clearfix">
+              <li><a href='trade/BOT_QTUM'><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+              <li><a href='trade/INK_QTUM'><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+              <li><a href='trade/LLT_SNET'><span class="icon-16-llt icon-16"></span><strong>流量币 LLT</strong></a></li>
+              <li><a href='trade/MED_QTUM'><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+              <li><a href='trade/QBT_QTUM'><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+              <li><a href='trade/TSL_QTUM'><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+            </ul>
+          </li>
+          <li> <a href="javascript:;">限时交易区<i class="caret"></i></a>
+            <ul class="third-nav clearfix">
+              <li><a href='trade/ADD_ETH'><span class="icon-16-add icon-16"></span><strong>EOSADD ADD</strong></a></li>
+              <li><a href='trade/ATMI_ETH'><span class="icon-16-atmi icon-16"></span><strong>Atonomi ATMI</strong></a></li>
+              <li><a href='trade/BBK_ETH'><span class="icon-16-bbk icon-16"></span><strong>Brickblock BBK</strong></a></li>
+              <li><a href='trade/BNB_USDT'><span class="icon-16-bnb icon-16"></span><strong>BinanceCoin BNB</strong></a></li>
+              <li><a href='trade/EDR_ETH'><span class="icon-16-edr icon-16"></span><strong>Endor EDR</strong></a></li>
+              <li><a href='trade/EON_ETH'><span class="icon-16-eon icon-16"></span><strong>EON EON</strong></a></li>
+              <li><a href='trade/HT_USDT'><span class="icon-16-ht icon-16"></span><strong>HuobiToken HT</strong></a></li>
+              <li><a href='trade/IQ_ETH'><span class="icon-16-iq icon-16"></span><strong>Everipedia IQ</strong></a></li>
+              <li><a href='trade/MEETONE_ETH'><span class="icon-16-meetone icon-16"></span><strong>MEET.ONE MEETONE</strong></a></li>
+              <li><a href='trade/NBAI_ETH'><span class="icon-16-nbai icon-16"></span><strong>智云链 NBAI</strong></a></li>
+              <li><a href='trade/NPXS_ETH'><span class="icon-16-npxs icon-16"></span><strong>PundiX NPXS</strong></a></li>
+              <li><a href='trade/PLY_ETH'><span class="icon-16-ply icon-16"></span><strong>PlayCoin PLY</strong></a></li>
+              <li><a href='trade/PPS_USDT'><span class="icon-16-pps icon-16"></span><strong>Prophet PPS</strong></a></li>
+              <li><a href='trade/TMT_ETH'><span class="icon-16-tmt icon-16"></span><strong>TRAXIA TMT</strong></a></li>
+              <li><a href='trade/UPP_ETH'><span class="icon-16-upp icon-16"></span><strong>SentinelProtocol UPP</strong></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class=""> <a href="javascript:goLogin()">我的财务</a> </li>
+      <li class=""> <a href="/myaccount/totp">安全设置</a> </li>
+      <li class=""> <a href="/articlelist/ann">公告</a> </li>
+      <li class=""> <a href="/voterequest">上币申请</a> </li>
+      <li class=""> <a href="javascript:;">帮助<i class="caret"></i></a>
+        <ul class="second-nav clearfix">
+          <li> <a href="/help">问题中心</a> </li>
+          <li> <a href="javascript:ticketsRoute();">提交工单</a> </li>
+          <li> <a href="/coins">资料下载<i class="caret"></i></a>
+            <ul class="third-nav nav-help clearfix">
+              <li><a href="/mobileapp">手机APP</a></li>
+              <li><a href="download/v1.0.4/Gateio_Setup.7z?v=101" target="_blank">Windows APP</a></li>
+              <li><a href="download/v1.0.2/Gate.io.dmg?v=101" target="_blank">Mac APP</a></li>
+              <li><a href="coins">币种资料</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div id="top_last_rate" style="display: none"></div>
+  </div>
+</div>
+<script>
+  function goLogin() {
+      if (confirm("请先登录，去登录？")){
+          window.location.href="/login"
+      }
+  }
+</script>

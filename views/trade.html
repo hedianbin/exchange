@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>B2B - Gate.io - The Gate of Blockchain Assets Exchange</title>
+<meta name="description" content="<%= symbol %> and <%= replacesymbol %> 兑换, 网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+<meta name="keywords" content="比特币, bitcoin, <%= symbol %>, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+<meta name="format-detection" content="telephone=no">
+<!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+<link href="css/style.css?v=1535042251" rel="stylesheet">
+<style>
+.icon-48, .icon-32, .icon-16 {
+	background-image: url("images/coins48.png?v=1535100628")
+}
+</style>
+<link href="css/coins_16.css?v=1535100628" rel="stylesheet">
+<link href="css/coins_32.css?v=1535100628" rel="stylesheet">
+<link href="css/trade.css?v=1535032135" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png"/>
+<script>var g_lang = 'cn',nickName = 'xiaonu';</script>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+<script src="js/trade.js"></script>
+</head>
+<body class="">
+<div id="siteNoty" class="notification-box">
+  <div class="noty_message">【重要通知】： <a id="siteNotyCon" href="/article/16610" >gate.io已分发Mobius(MOBI)奖励</a><a class="close pull-right" href=javascript:;></a></div>
+</div>
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/nav.html")
+</script>
+<div class="content index-content clearfix">
+  <div class="leftbar trade-warn-mark">
+    <table class="marketlist dataTable" id="tradelist">
+      <tbody>
+        <tr>
+          <td class="alignRight" style="border-bottom:0"><div id='market_controller' class="clearfix">
+              <button value="<%= replacesymbol %>" class="tline_btn left_btn tn_selected" title="对<%= replacesymbol %>交易"><%= replacesymbol %></button>
+              <button value="<%= symbol %>" class="tline_btn left_btn " title="对<%= symbol %>交易"><%= symbol %></button>
+              <button value="ETH" class="tline_btn left_btn " title="对ETH交易">ETH</button>
+              <button value="QTUM" class="tline_btn left_btn " title="对QTUM交易">QTUM</button>
+              <button value="LIMITED" class="tline_btn left_btn " title="限时交易区">限时</button>
+              <button value="CUSTOM" class="tline_btn left_btn " title="我的自选区">自选</button>
+            </div>
+            <input type="text" class="search" id="marketSearch" placeholder="搜索..."/></td>
+        </tr>
+        <tr id="marketlistTabCon">
+          <td id='marketlist_container_<%= replacesymbol %>' class="alignRight" style="display:block"><div class="market_wrapper">
+              <table id="marketlist_<%= replacesymbol %>">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格<span class="left-price-type">(<%= replacesymbol %>)</span></th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="<%= replacesymbol %>Tbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id='marketlist_container_<%= symbol %>' class="alignRight" style=""><div class="market_wrapper">
+              <table id="marketlist_<%= symbol %>">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格<span class="left-price-type">(<%= symbol %>)</span></th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="<%= symbol %>Tbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id='marketlist_container_eth' class="alignRight" style=""><div class="market_wrapper">
+              <table id="marketlist_eth">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格<span class="left-price-type">(ETH)</span></th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="ethTbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id='marketlist_container_qtum' class="alignRight" style=""><div class="market_wrapper">
+              <table id="marketlist_qtum">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格<span class="left-price-type">(QTUM)</span></th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="qtumTbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id='marketlist_container_limited' class="alignRight" style=""><div class="market_wrapper">
+              <table id="marketlist_limited">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格<span class="left-price-type">(ETH)</span></th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="limitedTbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id='marketlist_container_custom' class="alignRight" style=""><div class="market_wrapper">
+              <table id="marketlist_custom">
+                <thead>
+                  <tr style="height:40px">
+                    <th class="sortable sorting"><b>币种</b></th>
+                    <th class="sortable sorting">价格</th>
+                    <th class="sortable sorting">日涨跌</th>
+                    <th class="sorting_disabled sorting">自选</th>
+                  </tr>
+                </thead>
+                <tbody id="customTbody">
+                </tbody>
+              </table>
+            </div></td>
+          <td id="leftTipPan"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="main_content" class="main_content">
+    <div class="main_title has-t-warn">
+      <h1> <span id="mianTlist" class="clearfix"> <span class="coin-title"><a href="/coininfo/<%= symbol %>" target="_blank"><span class="icon-32 icon-32-<%= symbol %>"></span></a><a href="/coininfo/<%= symbol %>" target="_blank"><%= name %> <%= symbol %></a> 对<strong style="margin-right: 20px"> <%= replacename %> <%= replacesymbol %> </strong></span> <span class="top_last_li"> <span style='display:none;' id='market_unit_symbol'>$</span> <span id="top_last_rate_change"> <span class="price-dl"> <em>$</em><i id="currPrice" title="实时价格">6510.82</i><small> 或 </small><em>￥</em><i id="currFiat" title="实时价格">44403.79</i> </span> <em title="日涨跌"><span class='red'>+<strong id='currRateNum'>1.09</strong>%</span></em> </span> <span class=arr-con><i class="caret" id="upArrow"></i><i class="caret" id="dnArrow"></i></span> <i id="currVol" title="24h 成交量"><small>量：</small>$<span id="ticker_vol_b">215.02万</span></i> </span> </span> </h1>
+    </div>
+    <div class="right_mcontent clearfix has-trade-warn">
+      <div id="topSection" class=" ">
+        <div class="kline-title"><%= symbol %> / <%= replacesymbol %> K线图</div>
+        <div class="top-risk-tip"> <span class='red'><b>提示：</b> <%= replacesymbol %>币种说明<a target=_blank href='/article/16269'>请点击这里查看详情</a>，充提请使用C2C <a target=_blank href='/c2c/<%= replacesymbol %>_cny'>请点击这里进行C2C交易</a> 。</span> </div>
+        <div class="k-line-container box-padding clearfix">
+          <div>
+            <p><img src="images/kxian.png" alt=""></p>
+          </div>
+        </div>
+        <div id="globalInfoCon">
+          <div id="gInfoTitle" class="m_title clearfix"> <span id="gmTitle" class="rightinfo-active r-title">全球行情</span> <span class="button gm-on-off pull-right" title="隐藏">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+              <path d="M16 0h-5.333v16H16V0zm-4.167 15V1h3v14h-3zM0 0h5.333v7.12h1.5V4.23L10.607 8l-3.772 3.77V8.88h-1.5V16H0V0z"></path>
+            </svg>
+            </span> </div>
+          <div id="gmCon">
+            <div class="gm-head clearfix"> <span>交易所</span><span>交易对</span><span>交易价</span><span >成交量(<%= symbol %>)</span> </div>
+            <div id="globalMarkets">
+              <ul id="ulGlobalMarkets" data-id='global-markets'>
+              </ul>
+            </div>
+            <span class="gdata-from">数据来源 <a href='https://block.cc/coin/<%= symbol %>?exchange=gate-io' target=_blank>block.cc</a></span> </div>
+        </div>
+      </div>
+      <!--<div class="right-kline">
+					<div id="chartContainer"></div>
+                </div>-->
+      <div class="trade-main clearfix">
+        <div class="maichu maichu-form">
+          <div class="m_title"> <span>买入<%= symbol %></span> </div>
+          <div class="m_con_buy">
+            <form class="transaction-buy-form">
+              <table class="dealbox" cellspacing="0">
+                <tr class="tableOrderTr" t="static" style="display: none">
+                  <td width="16%" align="right">最佳买价</td>
+                  <td width="61%"><span  id="rate_best_ask" style="font-weight:600"></span><span class="coin-unit"><%= replacesymbol %>/<%= symbol %></span></td>
+                  <td width="23%"></td>
+                </tr>
+                <tr class="tableOrderTr" t="static" >
+                  <td align="right" colspan="3"><span class="red">我的余额</span> <span id="buyYuE" class="red"><span id="balance_ask_able" style="font-weight:bold"><%= replaceAvailBalance %></span><span class="coin-unit" style="color:#de5959"><%= replacesymbol %></span><a class="dp-link" href="/myaccount/deposit/<%= replacesymbol %>">充值</a><a class="dp-link" href="/myaccount/withdraw/<%= replacesymbol %>">提现</a></span></td>
+                </tr>
+                <tr class="tableOrderTr" t="static" >
+                  <td align="right" colspan="3">可买入量 <span id="amount_ask_able" style="font-weight:bold">0.0000</span><span class="coin-unit"><%= symbol %></span></td>
+                </tr>
+                <tr> 
+                  <!--<td align="right">买入价</td>-->
+                  <td colspan="3" class="input-td"><span class="b-unit ask-bid-price input-title">买入价 <span><%= replacesymbol %>/<%= symbol %></span></span>
+                    <input id="ask_rate" name="ask_rate" class="inputRate" maxlength="14" value="" /></td>
+                </tr>
+                <tr> 
+                  <!--<td align="right">买入量</td>-->
+                  <td colspan="3" class="input-td"><span class="b-unit input-title">买入量 <%= symbol %></span>
+                    <input id="ask_vol" name="ask_vol" class="inputRate" maxlength="14" value="0" /></td>
+                </tr>
+                <tr> 
+                  <!--<td align="right">兑换额</td>-->
+                  <td colspan="3" class="input-td"><span class="b-unit input-title" id='bid_total_label'>兑换额 <span class="currb-unit"><%= replacesymbol %></span></span>
+                    <input id="ask_amount" name="ask_amount" class="inputRate" maxlength="14" value="0" /></td>
+                </tr>
+                <tr>
+                  <td align="right" colspan="3">手续费 <span id="ask_fee">0</span><span class="coin-unit"><%= replacesymbol %></span> <i>(<span class="red">0.2%</span> 成交才收，撤单退回)</i></td>
+                </tr>
+                <tr>
+                  <input type="hidden" name="tokenid" value="<%= tokenid %>">
+                  <input type="hidden" name="replacetokentype" value="<%= replacetokentype %>">
+                  <input type="hidden" name="type" value="1">
+                  <td colspan="3" class="input-td" style="border:0"><input type="submit" class="btnAskBid jiaoyi_btn  button button-flat-action" t="ask" value="买入 (<%= replacesymbol %>→<%= symbol %>)" /></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+        <div class="mairu mairu-form">
+          <div class="m_title"> <span>卖出<%= symbol %></span>
+            <div class="b-s-t-right" id="showFiatRate">
+              <label for="hideprice" class="fiat-hide-show" title="实际成交价以币币交易价格为准，CNY计价只提供估值参考">
+              <input type="checkbox" id="hideprice"  name='hideprice' style="width: 20px;" />
+              <label for="hideprice" class="vr-btn"></label>
+              <span class="hidefiat-span">CNY计价</span>
+              </label>
+            </div>
+          </div>
+          <div class="m_con">
+            <form class="transaction-sell-form">
+              <table class="dealbox" cellspacing="0">
+                <tr class="tableOrderTr" t="static"  style="display: none">
+                  <td width="16%" align="right">最佳卖价</td>
+                  <td width="61%"><span id="rate_best_bid" style="font-weight:bold"></span><span class="coin-unit"><%= replacesymbol %>/<%= symbol %></span></td>
+                  <td width="23%"></td>
+                </tr>
+                <tr class="tableOrderTr" t="static" >
+                  <td align="right" colspan="3"><span class="green">我的余额</span> <span id="sellYuE" class="green"><span id="balance_bid_able" style="font-weight:bold"><%= availBalance %></span><span class="coin-unit" style="color:#36a792"><%= symbol %></span><a class="dp-link" href="/myaccount/deposit/<%= symbol %>">充值</a><a class="dp-link" href="/myaccount/withdraw/<%= symbol %>">提现</a></span></td>
+                </tr>
+                <tr class="tableOrderTr" t="static" >
+                  <td align="right" colspan="3">可兑换额 <span id="amount_bid_able" style="font-weight:bold">0.0000</span><span class="coin-unit"><%= replacesymbol %></span></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="input-td"><span class="b-unit ask-bid-price input-title">卖出价 <span><%= replacesymbol %>/<%= symbol %></span></span>
+                    <input id="ask_rate" name="ask_rate" class="inputRate" maxlength="14" value=""  /></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="input-td"><span class="b-unit input-title">卖出量 <%= symbol %></span>
+                    <input id="ask_vol" name="ask_vol" class="inputRate" maxlength="14" value="0" /></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="input-td"><span class="b-unit input-title" id='ask_total_label'>兑换额 <span class="currb-unit"><%= replacesymbol %></span></span>
+                    <input id="ask_amount" name="ask_amount" class="inputRate" maxlength="14" value="0" /></td>
+                </tr>
+                <tr>
+                  <td align="right" colspan="3">手续费 <span id="bid_fee">0</span><span class="coin-unit"><%= symbol %></span> <i>(<span class="green">0.2%</span> 成交才收，撤单退回)</i></td>
+                </tr>
+                <tr>
+                  <input type="hidden" name="tokenid" value="<%= tokenid %>">
+                  <input type="hidden" name="replacetokentype" value="<%= replacetokentype %>">
+                  <input type="hidden" name="type" value="2">
+                  <td colspan="3" class="input-td" style="border:0"><input type="submit" class="btnAskBid jiaoyi_btn  button button-flat-action" t="bid" value="卖出 (<%= symbol %>→<%= replacesymbol %>)" /></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+        <div id='divMyOrderSection'><!--style='display:none'-->
+          <div class="mairu my-order-box">
+            <div id="myOrderTab" class="m_title"> <span id="currdelegateOrder" class="order-tab order-t-active">当前委托</span> <span id="historydelegteOrder" class="order-tab">历史委托</span>
+              <div class="clear-all"><a href="javascript:void(0)" >全部撤单</a></div>
+            </div>
+            <div id="currOrder" class="m_con cjbox" style="height: 272px;border: 1px solid #ddd;background: #fff;">
+              <div id="order-info-box" class="box">
+                <div class="list-wrapper">
+                  <ul class="trade-list_re">
+                    <li class="number sorting dealtop"> <span class='right-align' id="tlist-date">日期</span> <span class='right-align my-type'>类型</span> <span class='right-align'> <em id="odPriceCol">价格(<%= replacesymbol %>) <i id="p_od_tip" class="order-tip-icon">i</i>
+                      </em> </span> <span class='right-align'>挂单量(<%= symbol %>)</span> <span style="margin-left: 70px">操作</span> </li>
+                  </ul>
+                  <div style="height: 231px; overflow-y: auto; overflow-x: hidden; text-align: center;position: relative">
+                    <ul id="current-entrust-list" class="trade-list_re" style="height: 3885px">
+                     
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="historyOrder" class="m_con cjbox" style="height: 272px;border: 1px solid #ddd;background: #fff;display: none">
+              <div id="history-info-box" class="box">
+                <div class="list-wrapper">
+                  <ul class="trade-list_re">
+                    <li class="number sorting dealtop"> <span class='right-align' id="tlist-date">日期</span> <span class='right-align my-type'>类型</span> <span class='right-align'> <em id="odPriceCol">价格(<%= replacesymbol %>) <i id="p_od_tip" class="order-tip-icon">i</i>
+                      </em> </span> <span class='right-align'>成交量(<%= symbol %>)</span> <span style="margin-left: 70px">操作</span> </li>
+                  </ul>
+                  <div style="height: 231px; overflow-y: auto; overflow-x: hidden; text-align: center;position: relative">
+                    <ul id="history-entrust-list" class="trade-list_re" style="text-align: left; height: 3885px">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="maichu my-order-box">
+            <div class="m_title" id="myFunds"> 我的资金 <em>(<a href='/myaccount'>查看全部</a>) </em>
+              <label for="hidezero" class="fund-hide-show">
+              <input type="checkbox" id="hidezero"  name='hidezero' style="width: 20px;" />
+              <label for="hidezero" class="vr-btn"></label>
+              <span class="hidezero-span">隐藏零资金币种</span>
+              </label>
+            </div>
+            <div id="currFunds" class="m_con cjbox" style="border: 1px solid #ddd;background: #fff;">
+              <div id="fund-info-box" class="box">
+                <div class="list-wrapper">
+                  <ul class="trade-list_re" id="my-fund-title">
+                    <li class="number sorting dealtop"> <span class='right-align my-type'>币种</span> <span class='right-align'>可用余额<span style="float: right;padding-right: 28px;">充值/提现</span></span> <span class='right-align'>挂单金额</span> <span class='right-align'>总计</span> </li>
+                  </ul>
+                  <div id="myFundCon" style="height: 231px; overflow-y: auto; overflow-x: hidden; text-align: center;position: relative">
+                    <ul id="my-fund-list" class="trade-list_re" style="height: 3885px">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end of place order box -->
+      
+      <div id='sectioncont' class="buy-sell-order clearfix ">
+        <div id='tableAskList' data-id="sectioncont">
+          <div class="mairu">
+            <div class="b-s-title clearfix">
+              <div class="b-s-t-left"> 最新价 <span class="unit-symbol hide" id="cnySymbol">￥</span> <span class="red" id='orderbook_last_rate'></span> </div>
+            </div>
+            <div class="m_con maidan">
+              <div class= "right-list list" >
+                <div class= "title-line sorting" style="height:30px; margin-top:10px;border-bottom: 1px solid #e4ebf0"> <span class= "right-align price" ><b>价格(<span class="currb-unit"><%= replacesymbol %></span>)</b></span> <span class= "volume right-align" ><b>数量(<%= symbol %>)</b></span> <span class= "total right-align" ><b>总计(<span class="currb-unit"><%= replacesymbol %></span>)</b></span> </div>
+                <div id="ask-list" >
+                  <ul id="ul-ask-list" data-id= "ask-list">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="maichu">
+            <div class="m_con maidan">
+              <div class= "right-list list" >
+                <div id="bid-list">
+                  <ul id="ul-bid-list" data-id= "bid-list">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='depth-pre clearfix'>
+          <div id="depthBox" class='b-s-t-left depth-precision-container'> <span class='color-hover'>深度合并</span> <span class='color-hover' id='depth-precision'>0.0001</span> <i class="color-hover caret depth-precision-arrow"></i>
+            <ul id='depth-precision_ul' class="hide">
+            </ul>
+          </div>
+          <div class="b-s-t-right" id="moreOrders"> <span>更多<i class="caret"></i></span> </div>
+        </div>
+        <div class="chengjiao clearfix">
+          <div class="bottom_maidan">
+            <div class="m_title" style="margin:10px 0 0"> 最新成交
+              <ul class="high-low">
+                <li> 最高价: <b id="tHigh">6569.35</b> </li>
+                <li> 最低价: <b id="tLow">6364.96</b> </li>
+              </ul>
+            </div>
+            <div class="m_con maidan cjbox clearfix" id="sectioncont-history">
+              <div id="deal-info-box" class="box">
+                <div class="list-wrapper">
+                  <ul class="trade-list_re">
+                    <li class="number sorting dealtop"> <span class="time">时间</span> 
+                      <!--<span class="type">交易类型</span>--> 
+                      <span class="price">成交价(<span class="currb-unit"><%= replacesymbol %></span>)</span> <span class="amount">成交量(<%= symbol %>)</span> <span class="total">总计(<span class="currb-unit"><%= replacesymbol %></span>)</span> </li>
+                  </ul>
+                  <div id="trade-list">
+                    <ul id="ul-trade-list" data-id='trade-list' class='trade-list_re'>
+                      <li data-id="list-item" tid="84060068" class="down"><span class="time" data-id="time">00:26:57</span><span class="price" data-id="price">6516.93</span><span class="amount" data-id="amount">0.0234</span><span class="total" data-id="total">152.80</span></li>
+                      <li data-id="list-item" tid="84059865" class="down"><span class="time" data-id="time">00:25:27</span><span class="price" data-id="price">6516.47</span><span class="amount" data-id="amount">0.0026</span><span class="total" data-id="total">16.94</span></li>
+                      <li data-id="list-item" tid="84059861" class="up"><span class="time" data-id="time">00:25:26</span><span class="price" data-id="price">6522.00</span><span class="amount" data-id="amount">0.1143</span><span class="total" data-id="total">745.46</span></li>
+                      <li data-id="list-item" tid="84059860" class="up"><span class="time" data-id="time">00:25:26</span><span class="price" data-id="price">6521.97</span><span class="amount" data-id="amount">0.0011</span><span class="total" data-id="total">7.17</span></li>
+                      <li data-id="list-item" tid="84059788" class="down"><span class="time" data-id="time">00:24:49</span><span class="price" data-id="price">6516.47</span><span class="amount" data-id="amount">0.0002</span><span class="total" data-id="total">1.30</span></li>
+                      <li data-id="list-item" tid="84059753" class="up"><span class="time" data-id="time">00:24:33</span><span class="price" data-id="price">6521.98</span><span class="amount" data-id="amount">0.0002</span><span class="total" data-id="total">1.30</span></li>
+                      <li data-id="list-item" tid="84059583" class="down"><span class="time" data-id="time">00:23:08</span><span class="price" data-id="price">6518.97</span><span class="amount" data-id="amount">0.0862</span><span class="total" data-id="total">561.94</span></li>
+                      <li data-id="list-item" tid="84059472" class="down"><span class="time" data-id="time">00:22:22</span><span class="price" data-id="price">6516.47</span><span class="amount" data-id="amount">0.0212</span><span class="total" data-id="total">138.15</span></li>
+                      <li data-id="list-item" tid="84059471" class="down"><span class="time" data-id="time">00:22:22</span><span class="price" data-id="price">6516.48</span><span class="amount" data-id="amount">0.0100</span><span class="total" data-id="total">65.16</span></li>
+                      <li data-id="list-item" tid="84058802" class="down"><span class="time" data-id="time">00:17:30</span><span class="price" data-id="price">6510.82</span><span class="amount" data-id="amount">0.2178</span><span class="total" data-id="total">1418.06</span></li>
+                      <li data-id="list-item" tid="84058779" class="up"><span class="time" data-id="time">00:17:16</span><span class="price" data-id="price">6523.75</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">32.62</span></li>
+                      <li data-id="list-item" tid="84058743" class="up"><span class="time" data-id="time">00:17:05</span><span class="price" data-id="price">6514.14</span><span class="amount" data-id="amount">0.0001</span><span class="total" data-id="total">0.86</span></li>
+                      <li data-id="list-item" tid="84058688" class="down"><span class="time" data-id="time">00:16:42</span><span class="price" data-id="price">6514.14</span><span class="amount" data-id="amount">0.0100</span><span class="total" data-id="total">65.14</span></li>
+                      <li data-id="list-item" tid="84058656" class="up"><span class="time" data-id="time">00:16:36</span><span class="price" data-id="price">6523.75</span><span class="amount" data-id="amount">0.0114</span><span class="total" data-id="total">74.37</span></li>
+                      <li data-id="list-item" tid="84058564" class="down"><span class="time" data-id="time">00:16:00</span><span class="price" data-id="price">6510.83</span><span class="amount" data-id="amount">0.0035</span><span class="total" data-id="total">23.04</span></li>
+                      <li data-id="list-item" tid="84058548" class="down"><span class="time" data-id="time">00:15:56</span><span class="price" data-id="price">6510.83</span><span class="amount" data-id="amount">0.0006</span><span class="total" data-id="total">3.91</span></li>
+                      <li data-id="list-item" tid="84058403" class="up"><span class="time" data-id="time">00:14:57</span><span class="price" data-id="price">6523.76</span><span class="amount" data-id="amount">0.2793</span><span class="total" data-id="total">1822.09</span></li>
+                      <li data-id="list-item" tid="84058307" class="up"><span class="time" data-id="time">00:14:25</span><span class="price" data-id="price">6527.49</span><span class="amount" data-id="amount">0.0155</span><span class="total" data-id="total">101.18</span></li>
+                      <li data-id="list-item" tid="84058305" class="up"><span class="time" data-id="time">00:14:25</span><span class="price" data-id="price">6527.49</span><span class="amount" data-id="amount">0.0155</span><span class="total" data-id="total">101.18</span></li>
+                      <li data-id="list-item" tid="84058284" class="up"><span class="time" data-id="time">00:14:19</span><span class="price" data-id="price">6527.51</span><span class="amount" data-id="amount">0.0059</span><span class="total" data-id="total">38.51</span></li>
+                      <li data-id="list-item" tid="84058191" class="up"><span class="time" data-id="time">00:13:46</span><span class="price" data-id="price">6527.56</span><span class="amount" data-id="amount">0.0025</span><span class="total" data-id="total">16.32</span></li>
+                      <li data-id="list-item" tid="84058190" class="up"><span class="time" data-id="time">00:13:46</span><span class="price" data-id="price">6527.55</span><span class="amount" data-id="amount">0.0100</span><span class="total" data-id="total">65.28</span></li>
+                      <li data-id="list-item" tid="84057930" class="down"><span class="time" data-id="time">00:12:18</span><span class="price" data-id="price">6528.31</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">32.64</span></li>
+                      <li data-id="list-item" tid="84057929" class="down"><span class="time" data-id="time">00:12:18</span><span class="price" data-id="price">6528.31</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">32.64</span></li>
+                      <li data-id="list-item" tid="84057917" class="up"><span class="time" data-id="time">00:12:12</span><span class="price" data-id="price">6531.27</span><span class="amount" data-id="amount">0.0360</span><span class="total" data-id="total">235.31</span></li>
+                      <li data-id="list-item" tid="84057809" class="up"><span class="time" data-id="time">00:11:46</span><span class="price" data-id="price">6521.25</span><span class="amount" data-id="amount">0.0006</span><span class="total" data-id="total">3.62</span></li>
+                      <li data-id="list-item" tid="84057594" class="up"><span class="time" data-id="time">00:10:41</span><span class="price" data-id="price">6520.00</span><span class="amount" data-id="amount">0.1000</span><span class="total" data-id="total">652.00</span></li>
+                      <li data-id="list-item" tid="84057515" class="up"><span class="time" data-id="time">00:10:10</span><span class="price" data-id="price">6519.98</span><span class="amount" data-id="amount">0.0049</span><span class="total" data-id="total">32.21</span></li>
+                      <li data-id="list-item" tid="84057495" class="up"><span class="time" data-id="time">00:10:05</span><span class="price" data-id="price">6519.98</span><span class="amount" data-id="amount">0.1640</span><span class="total" data-id="total">1069.28</span></li>
+                      <li data-id="list-item" tid="84057292" class="down"><span class="time" data-id="time">00:08:51</span><span class="price" data-id="price">6511.00</span><span class="amount" data-id="amount">0.0441</span><span class="total" data-id="total">287.14</span></li>
+                      <li data-id="list-item" tid="84057291" class="down"><span class="time" data-id="time">00:08:51</span><span class="price" data-id="price">6511.01</span><span class="amount" data-id="amount">0.0070</span><span class="total" data-id="total">45.58</span></li>
+                      <li data-id="list-item" tid="84057275" class="down"><span class="time" data-id="time">00:08:44</span><span class="price" data-id="price">6512.01</span><span class="amount" data-id="amount">0.0284</span><span class="total" data-id="total">184.94</span></li>
+                      <li data-id="list-item" tid="84056900" class="up"><span class="time" data-id="time">00:06:42</span><span class="price" data-id="price">6510.00</span><span class="amount" data-id="amount">0.6736</span><span class="total" data-id="total">4385.14</span></li>
+                      <li data-id="list-item" tid="84056552" class="up"><span class="time" data-id="time">00:04:37</span><span class="price" data-id="price">6512.97</span><span class="amount" data-id="amount">0.0015</span><span class="total" data-id="total">10.08</span></li>
+                      <li data-id="list-item" tid="84056499" class="up"><span class="time" data-id="time">00:04:16</span><span class="price" data-id="price">6512.97</span><span class="amount" data-id="amount">0.0108</span><span class="total" data-id="total">70.34</span></li>
+                      <li data-id="list-item" tid="84056488" class="up"><span class="time" data-id="time">00:04:13</span><span class="price" data-id="price">6514.64</span><span class="amount" data-id="amount">0.0155</span><span class="total" data-id="total">100.98</span></li>
+                      <li data-id="list-item" tid="84056487" class="up"><span class="time" data-id="time">00:04:13</span><span class="price" data-id="price">6514.64</span><span class="amount" data-id="amount">0.0089</span><span class="total" data-id="total">57.98</span></li>
+                      <li data-id="list-item" tid="84056486" class="up"><span class="time" data-id="time">00:04:13</span><span class="price" data-id="price">6506.97</span><span class="amount" data-id="amount">0.0066</span><span class="total" data-id="total">42.95</span></li>
+                      <li data-id="list-item" tid="84056261" class="up"><span class="time" data-id="time">00:02:31</span><span class="price" data-id="price">6507.04</span><span class="amount" data-id="amount">0.0063</span><span class="total" data-id="total">41.10</span></li>
+                      <li data-id="list-item" tid="84056255" class="up"><span class="time" data-id="time">00:02:30</span><span class="price" data-id="price">6507.04</span><span class="amount" data-id="amount">0.0088</span><span class="total" data-id="total">57.52</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end of order lists --> 
+      
+    </div>
+    <!--end of right content--> 
+  </div>
+  <!-- end of main content--> 
+  
+</div>
+<!-- content -->
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+</script>
+</body>
+</html>

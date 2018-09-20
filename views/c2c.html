@@ -1,0 +1,1402 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>USDT C2C - Gate.io - The Gate of Blockchain Assets Exchange</title>
+<meta name="description" content="USDT 兑换, 网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+<meta name="keywords" content="比特币, bitcoin, BTC, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+<meta name="format-detection" content="telephone=no">
+<!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+<link href="css/style.css?v=1535042251" rel="stylesheet">
+<style>
+.icon-48, .icon-32, .icon-16 {
+	background-image: url("images/coins48.png?v=1535100628")
+}
+</style>
+<link href="css/coins_16.css?v=1535100628" rel="stylesheet">
+<link href="css/coins_32.css?v=1535100628" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png"/>
+<script>var g_lang = 'cn',nickName = 'xiaonu';</script>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+</head>
+<body class="">
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/nav.html")
+	</script>
+<link rel="stylesheet" href="css/lead.css" />
+<link href="css/push.css?v=1535038902" rel="stylesheet" type="text/css">
+<style>
+body{ overflow-y: scroll}
+</style>
+<div class="panel messages-menu dropdown-menu text-center" style="display: none;">
+  <div class="messages-head text-center">订单消息</div>
+  <div class="scrollable custom-scroll-style hover-scroll-bar">
+    <ul class="list-group massages-item" id="massages-item">
+      <div class="no-unread text-center">当前没有待处理订单消息</div>
+    </ul>
+  </div>
+</div>
+<div class="content push-con">
+  <div class="leftbar">
+    <div class="left-tab">
+      <ul id='market_controller' class="clearfix">
+        <button id="cny" class="tline_btn left_btn tn_selected"> CNY交易区 </button>
+        <button id="usd" class="tline_btn left_btn "> USD交易区 </button>
+      </ul>
+      <table class="left-push-table" id="marketlist_cny" style="display:table">
+        <tbody>
+          <tr id="USDT_CNY" class="even">
+            <td><span class="icon-16 icon-16-usdt"></span> <span class="bizhong_en">USDT/CNY</span> USDT/人民币 </td>
+            <td class="go-push">></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="left-push-table" id="marketlist_krw" style="display:">
+        <tbody>
+          <tr id="USDT_CNY" class="even">
+            <td><span class="icon-16 icon-16-usdt"></span> <span class="bizhong_en">USDT/CNY</span> USDT/人民币 </td>
+            <td class="go-push">></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    $("#market_controller").find("button").click(function () {
+        $(this).addClass("tn_selected").siblings().removeClass("tn_selected");
+        $(".left-push-table").hide();
+        $("#marketlist_"+$(this).attr("id")).show()
+    });
+    $(".left-push-table").find("tr").click(function () {
+        location.href = '/c2c/'+$(this).attr("id");
+    });
+    $("#USDT_CNY").addClass("coin-selected")
+</script> 
+  <script>
+                //tootip
+                !function(o){o.fn.toolTip=function(t){var e={background:"#1e2227",color:"#fff",opacity:"0.95"},t=o.extend(e,t);return this.each(function(){var e=o(this),i=e.attr("title");if(""!=i){var n=o('<div id="tooltip" />');e.attr("title",""),e.hover(function(e){o("#tooltip").remove(),n.hide().appendTo("body").html(i).hide().css({"background-color":t.background,color:t.color,opacity:t.opacity}).fadeIn(500)},function(){n.remove()})}e.mousemove(function(o){var t=o.pageX+20,e=document.body.clientWidth-170;void 0!=n&&(t>e&&(t=e),n.css({top:o.pageY+20,left:t}))})})}}(jQuery);
+                $('.tooltip').toolTip();
+            </script>
+  <link href="css/chatcss.css?v=1527050433" rel="stylesheet" type="text/css">
+  <!-- chatbox start-->
+  <div id="boxposition" class="push-chat">
+    <div id="box" status='close'> <!--<span class="title">聊天<sub id="chatNum"></sub></span> -->
+      <div class="chatbox">
+        <div id="panelHeader" class="panel_header header">
+          <h1 id="panelTitle" class="text_ellipsis padding_20">
+            <div id="chatRoom">与 <b id="bsName" class="red"></b> 交谈
+              <div><span>交易单号:</span><span id="txid"></span></div>
+            </div>
+          </h1>
+          <ul class='qqt' id='chatOption'>
+            <li id="aLeft"><b><span class="menu-ico"><i class="ico-solid"></i><i class="ico-empty"></i></span>靠左</b></li>
+            <li id="aTop"> <b><span class="menu-ico"><i class="ico-solid ico1-top"></i><i class="ico-empty ico1-bottom"></i></span>靠上</b></li>
+            <li  id="aRight"> <b><span class="menu-ico"><i class="ico-empty ico-right"></i><i class="ico-solid"></i></span>靠右</b></li>
+            <li id="aBottom"> <b><span class="menu-ico"><i class="ico-solid ico3-top"></i><i class="ico-empty ico3-bottom"></i></span>靠下</b></li>
+            <div style="clear:both"></div>
+          </ul>
+          <ul id='closeWin'>
+            <li id='clWin' title="最小化"><span></span></li>
+            <li id='bsWin' title="最大化"><span id='bigWin'></span></li>
+            <li id='smWin' title="还原"><span></span><span id='smallWin'></span></li>
+            <li id="moreSize">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <path id="setIcon" d="M50.22 21h-5.052c-2.62 0-3.93-3.167-2.08-5.018l3.573-3.572c.696-.695.696-1.823 0-2.518L42.11 5.34c-.695-.696-1.823-.696-2.518 0l-3.572 3.57C34.166 10.763 31 9.45 31 6.833v-5.05C31 .796 30.203 0 29.22 0h-6.44C21.797 0 21 .797 21 1.78v5.053c0 2.62-3.166 3.93-5.018 2.08L12.41 5.338c-.695-.696-1.823-.696-2.518 0L5.34 9.89c-.696.695-.696 1.823 0 2.518l3.57 3.572C10.764 17.832 9.45 21 6.833 21h-5.05C.796 21 0 21.797 0 22.78v6.44C0 30.203.797 31 1.78 31h5.052c2.62 0 3.93 3.167 2.08 5.018L5.338 39.59c-.696.696-.696 1.823 0 2.518L9.89 46.66c.695.696 1.823.696 2.518 0l3.572-3.57C17.834 41.236 21 42.55 21 45.167v5.05c0 .985.797 1.782 1.78 1.782h6.44c.983 0 1.78-.797 1.78-1.78v-5.052c0-2.62 3.166-3.93 5.018-2.08l3.572 3.573c.695.696 1.823.696 2.518 0l4.553-4.552c.696-.695.696-1.823 0-2.518l-3.57-3.572C41.236 34.168 42.55 31 45.167 31h5.05c.985 0 1.782-.797 1.782-1.78v-6.44c0-.983-.797-1.78-1.78-1.78zM26 34c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z" fill="#fff"/>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <!--<div style="height: 30px;line-height: 30px;color: #fff;padding: 0 10px;background: #7d1c1c;">平台不支持充值码交易，请勿使用充值码线下交易！</div>-->
+        <div id="panelPhone" class="phone-modal"></div>
+        <div class="panel chat-panel" id="panel_chat"  style="display: block;">
+          <div id="panelBodyWrapper" class="panel_body_container" style="overflow: hidden;">
+            <div id="panelBody" class="panel_body chat_container" style=" -webkit-transition: -webkit-transform 0ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(0px, 0px) scale(1) translateZ(0px);">
+              <ul id="chatBox" class='dialog' style="width: 100%; overflow-y: auto; overflow-x: hidden;">
+              </ul>
+            </div>
+          </div>
+          <div id="panelFooter" class="chat_toolbar_footer footery">
+            <div class="chat_toolbar">
+              <form onsubmit="sendMessage();return false" id="chatForm">
+                <textarea id="message" autocomplete="off" class="input input_white chat_textarea" rows="" cols=""  onkeydown="if (event.keyCode == 13) { sendMessage(); return false; }"></textarea>
+              </form>
+              <div class="right-btn">
+                <button id="send_chat_btn" class="btny btn_small btn_blue" onclick="sendMessage();return false"> <span class="btn_text">发送</span>
+                <div class="spinner">
+                  <div class="bounce1"></div>
+                  <div class="bounce2"></div>
+                  <div class="bounce3"></div>
+                </div>
+                </button>
+                <span class="press-key btny btn_small btn_blue"></span>
+                <div class="press-tip"><i></i><span>按Enter键发送</span></div>
+              </div>
+              <div style="clear:both"></div>
+            </div>
+            <div class="rs-con">
+              <div id="winResize">
+                <p></p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-cover"></div>
+      <div id="resizeW"></div>
+      <div id="resizeH"></div>
+    </div>
+  </div>
+  <div class="main_content">
+    <div class="main_title clearfix">
+      <h1>
+        <ul id="mianTlist" class="clearfix pull-left">
+          <li> <a href="/coininfo/USDT" target="_blank"><span class="icon-32 icon-32-usdt"></span></a> <a href="/coininfo/USDT" target="_blank" class="tooltip" title="Tether  USDT 对 CNY">Tether USDT</a> 对 <strong> CNY </strong> <span class="market-opt"> <i class="caret"></i>
+            <ul>
+              <li><a href="/c2c/USDT_CNY">USDT/CNY</a> </li>
+              <!--<li><a href="/c2c/USDT_USD">USDT/USD</a></li>-->
+            </ul>
+            </span> </li>
+        </ul>
+        <div class="tour" onclick="javascript:evalTour();"> <span style="position: absolute;top: 29px;left: 284px;" title="新手引导">
+          <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <defs>
+              <style/>
+</defs>
+            <path d="M914.131 767.334c-1.2 8.25-5.324 16.09-11.525 21.97l-235.692 223.93a37.824 37.824 0 0 1-44.025 6.027 38.175 38.175 0 0 1-19.658-40.018l52.918-320.144c1.405-8.25 5.266-15.563 11.175-21.267l232.298-225.658a37.883 37.883 0 0 1 43.938-6.552 38.168 38.168 0 0 1 20.184 39.725l-49.613 321.987zm-201.406-91.942l-41.89 253.36L857.41 751.45v-.03l-144.685-76.028zm179.7-339.1a43.82 43.82 0 0 1-43.674-43.06h-.176V175.635c0-40.428-40.632-87.642-80.943-87.642H234.146c-40.31 0-87.115 47.214-87.115 87.642v663.428c0 40.427 46.805 69.944 87.115 69.944h208.837c24.221 0 43.85 19.687 43.85 43.996 0 24.28-19.629 43.967-43.85 43.967H234.146c-88.636 0-174.816-69.007-174.816-157.907V175.635C59.33 86.705 145.51 0 234.146 0h533.486c88.637 0 168.644 86.706 168.644 175.635v117.597h-.176a43.82 43.82 0 0 1-43.674 43.06zm-631.395-51.31a25.684 25.684 0 0 1 0-51.31h377.334c14.07 0 25.596 11.526 25.596 25.656a25.713 25.713 0 0 1-25.596 25.654H261.03zm505.286 137.84a25.684 25.684 0 0 1-25.567 25.655h-479.72a25.684 25.684 0 0 1 0-51.31h479.72c14.07 0 25.567 11.555 25.567 25.655zM235.463 586.317c0-14.1 11.496-25.655 25.567-25.655h300.545c14.07 0 25.596 11.555 25.596 25.655a25.713 25.713 0 0 1-25.596 25.655H261.03a25.684 25.684 0 0 1-25.567-25.655z" fill="#FF9800"/>
+          </svg>
+          </span> <span style="position: absolute;top: 34px;left: 309px;color: #666;font-style: normal;font-size: 14px;">新手引导</span> </div>
+        <div class="pull-right business-buy-sell"> <a class="sub-btn"  disabled  href="javascript:busi_buy_show();">商家买入USDT</a> <a class="sub-btn sub-sell"  disabled  href="javascript:busi_sell_show();">商家卖出USDT</a> </div>
+      </h1>
+    </div>
+    <ul class="curr-coin-info">
+      <li><em>实时价：</em>￥<span id="curr_rate">6.84</span></li>
+      <li><em>日涨跌：</em><span class="green" id="last_rate_change"><font class='green'> -0.58%</font><i class=icon-arrow-down>↓</i></span></li>
+      <li><em>最高价：</em>￥<span id="ticker_high">6.98</span></li>
+      <li><em>最低价：</em>￥<span id="ticker_low">6.80</span></li>
+    </ul>
+    <div class="trade-main clearfix">
+      <div class="maichu maichu-form">
+        <div class="m_title"> <span>买入USDT</span> </div>
+        <div class="m_con_buy">
+          <div> <a class="red" href="https://gateio.io/article/16403" target=_blank>如何买入？</a> </div>
+          <table class="dealbox joyride-maichu">
+            <tr>
+              <td class="input-td"><span class="b-unit ask-bid-price input-title">买入估价 <span>CNY</span></span>
+                <input id="buy_rate" class="inputRate red" readonly value="6.84"/></td>
+            </tr>
+            <tr>
+              <td class="input-td joyride-input-td"><span class="b-unit input-title joyride-buy-title">买入量 USDT</span>
+                <input id="buy_vol" class="inputRate joyride-buy-Rate" maxlength="10"
+                                       onkeydown="return check_number(event);"
+                                       onkeyup="decimal2(this);on_input_buy_vol(get_element('buy_rate').value);"
+                                       value=""/></td>
+            </tr>
+            <tr>
+              <td class="input-td"><span class="b-unit input-title" id='buy_total_label'>金额 CNY</span>
+                <input id="buy_amount" class="inputRate" maxlength="10"
+                                       onkeydown="return check_number(event);"
+                                       onkeyup="decimal2(this);on_input_buy_amount(get_element('buy_rate').value);"
+                                       value=""/></td>
+            </tr>
+            <tr>
+              <td class="input-td"><span class="pull-left joyride-buy-pull">支付方式<a href="/myaccount/payment_setup" target=_blank><span class="button pay-type-set" title="设置">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.4 120.9 600 600" width="17" height="17">
+                  <path d="M594 473.5V368.8h-76c-5.7-23.8-15.2-46.4-27.5-66.4l53.8-53.8-73.9-73.9-53.8 53.4c-20.6-12.8-42.7-21.8-66.4-27.5v-75.9H245.5v75.9c-23.8 5.7-46.4 15.2-66.4 27.5l-53.8-53.8-73.9 73.9 53.4 53.8C92 322.6 83 344.7 77.3 368.4h-76V473h75.9c5.7 23.8 15.2 46.4 27.5 66.4L51 593.3l73.9 73.9 53.8-53.4c20.6 12.8 42.7 21.8 66.4 27.5v75.9h104.6v-75.9c23.8-5.7 46.4-15.2 66.4-27.5l53.8 53.8 73.9-73.9-53.4-53.8c12.8-20.6 21.8-42.7 27.5-66.4H594zm-296.4 69.7c-67.3 0-122.3-54.6-122.3-122.3 0-67.3 54.6-122.3 122.3-122.3 67.3 0 122.3 54.6 122.3 122.3-.4 67.4-54.9 122.3-122.3 122.3z"/>
+                </svg>
+                </span></a>：</span>
+                <ul class="pay-type-ul joyride-buy-pay">
+                  <li> <i class="icon-empty"></i>
+                    <input id="buy_pay_ali"type="checkbox" value="pay_ali" hidden />
+                    <span>支付宝</span> </li>
+                  <li> <i class="icon-empty"></i>
+                    <input id="buy_pay_wechat" type="checkbox" value="pay_wechat" hidden />
+                    <span>微信</span> </li>
+                  <li> <i class="icon-empty"></i>
+                    <input id="buy_pay_bank" type="checkbox" value="pay_bank" hidden />
+                    <span>银行转账</span> </li>
+                </ul>
+                <span class="red">（必须本人支付）</span> <a class="jyxz" href="https://gateio.io/article/16397" target=_blank>《交易须知》</a></td>
+            </tr>
+            <tr>
+              <td class="input-td" style="border:0"><input type="button" class="btnAskBid jiaoyi_btn  button button-flat-action joyride-buy-button" t="ask"
+									   id = "buy_submit" value="买入 (CNY→USDT)"/></td>
+            </tr>
+          </table>
+        </div>
+        <i class="sp-top"></i> <i class="sp-bottom"></i> </div>
+      <div class="mairu mairu-form">
+        <div class="m_title"> <span>卖出USDT</span> <span class="yu-e"> <span>(</span> <span>USDT余额</span> <span id="balance_sell_able" class="green">0.0000</span> <span>)</span> </span> <span class="pull-right yu-e-link"> <a class="dp-link" href="/myaccount/deposit/USDT" target=_blank>USDT充值</a> <a class="dp-link" href="/myaccount/withdraw/USDT" target=_blank>USDT提现</a> </span> </div>
+        <div class="m_con">
+          <div> <a class="red" href="https://gateio.io/article/16403" target=_blank>如何卖出？</a> </div>
+          <table class="dealbox" cellspacing="0">
+            <tr>
+              <td class="input-td"><span class="b-unit ask-bid-price input-title">卖出估价 <span>CNY</span></span>
+                <input id="sell_rate" class="inputRate green" maxlength="10" readonly
+                                       value="6.83"/></td>
+            </tr>
+            <tr>
+              <td class="input-td"><span class="b-unit input-title joyride-sell-title">卖出量 USDT</span>
+                <input id="sell_vol" class="inputRate joyride-sell-Rate" maxlength="10"
+                                       onkeydown="return check_number(event);"
+                                       onkeyup="decimal2(this);on_input_sell_vol(get_element('sell_rate').value);"
+                                       value=""/></td>
+            </tr>
+            <tr>
+              <td class="input-td"><span class="b-unit input-title">金额 CNY</span>
+                <input id="sell_amount" class="inputRate" maxlength="10"
+                                       onkeydown="return check_number(event);"
+                                       onkeyup="decimal2(this);on_input_sell_amount(get_element('sell_rate').value);"
+                                       value=""/></td>
+            </tr>
+            <tr>
+              <td class="input-td"><span class="pull-left joyride-sell-pull">支付方式<a href="/myaccount/payment_setup" target=_blank><span class="button pay-type-set" title="设置">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.4 120.9 600 600" width="17" height="17">
+                  <path d="M594 473.5V368.8h-76c-5.7-23.8-15.2-46.4-27.5-66.4l53.8-53.8-73.9-73.9-53.8 53.4c-20.6-12.8-42.7-21.8-66.4-27.5v-75.9H245.5v75.9c-23.8 5.7-46.4 15.2-66.4 27.5l-53.8-53.8-73.9 73.9 53.4 53.8C92 322.6 83 344.7 77.3 368.4h-76V473h75.9c5.7 23.8 15.2 46.4 27.5 66.4L51 593.3l73.9 73.9 53.8-53.4c20.6 12.8 42.7 21.8 66.4 27.5v75.9h104.6v-75.9c23.8-5.7 46.4-15.2 66.4-27.5l53.8 53.8 73.9-73.9-53.4-53.8c12.8-20.6 21.8-42.7 27.5-66.4H594zm-296.4 69.7c-67.3 0-122.3-54.6-122.3-122.3 0-67.3 54.6-122.3 122.3-122.3 67.3 0 122.3 54.6 122.3 122.3-.4 67.4-54.9 122.3-122.3 122.3z"/>
+                </svg>
+                </span></a>：</span>
+                <ul class="pay-type-ul joyride-sell-pay">
+                  <li> <i class="icon-empty"></i>
+                    <input id="sell_pay_ali"type="checkbox" value="pay_ali" hidden />
+                    <span>支付宝</span> </li>
+                  <li> <i class="icon-empty"></i>
+                    <input id="sell_pay_wechat" type="checkbox" value="pay_wechat" hidden />
+                    <span>微信</span> </li>
+                  <li> <i class="icon-empty"></i>
+                    <input id="sell_pay_bank" type="checkbox" value="pay_bank" hidden />
+                    <span>银行转账</span> </li>
+                </ul>
+                <span class="red">（必须本人支付）</span> <a class="jyxz" href="https://gateio.io/article/16397" target=_blank>《交易须知》</a></td>
+            </tr>
+            <tr>
+              <td class="input-td" style="border:0"><input type="button" class="btnAskBid jiaoyi_btn  button button-flat-action joyride-sell-button" t="bid"
+									   id="sell_submit" value="卖出 (USDT→CNY)"/></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id='divMyRecordSection' class="clearfix">
+        <div class="my-order-box">
+          <div class="m_title"> 市场挂单（只显示在线商家）
+            <div class="HideZeroDiv pull-right zero-active" id="hideZbtn">
+              <label for="hidezero">
+              <input type="checkbox" id="hidezero" name='hidezero' style="width: 20px;" checked />
+              <label for="hidezero" class="vr-btn"></label>
+              <span class="hidezero-span">显示市场挂单</span>
+              </label>
+              <input type="hidden" id="min">
+              <input type="hidden" id="max">
+            </div>
+          </div>
+          <div class="sectioncont" id="divPushOrder">
+            <table class='sf-grid table-inacc table-inacc-head'>
+              <thead>
+                <tr>
+                  <th align='left'><b>类型</b></th>
+                  <th align='right'><b>价格</b>(CNY)</th>
+                  <th align='right'><b>数量</b>(USDT)</th>
+                  <th align='right'><b>总计</b>(CNY)</th>
+                  <th align='right'><b>交易限额</b>(USDT)</th>
+                  <th align='right'><b>商家在线</b></th>
+                  <th align='right'><b>成交单数</b></th>
+                  <th align='right'><b>平均用时</b></th>
+                  <th align='right'><b>付款方式</b></th>
+                  <th align='right'></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-scroll" id="divPushOrderContent">
+              <table class='sf-grid table-inacc table-inacc-body' id="pushOrder">
+                <tbody>
+                  <tr class="odd" onclick="set_vol(16404.1800);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.87</td>
+                    <td align='right'>16404.1800</td>
+                    <td align='right'>112696.72</td>
+                    <td align='right'>2000.00~16404.18</td>
+                    <td align='right'>俞** 2分钟</td>
+                    <td align='right'>8353</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1047878','6.87','16404.1800','112696.72','2000.00~16404.18','2','俞** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(24967.8800);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.87</td>
+                    <td align='right'>24967.8800</td>
+                    <td align='right'>171529.34</td>
+                    <td align='right'>2000.00~24967.88</td>
+                    <td align='right'>俞** 2分钟</td>
+                    <td align='right'>8353</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1047861','6.87','24967.8800','171529.34','2000.00~24967.88','2','俞** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(1748.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.87</td>
+                    <td align='right'>1748.0000</td>
+                    <td align='right'>12008.76</td>
+                    <td align='right'>200.00~1978.00</td>
+                    <td align='right'>梁** 2分钟</td>
+                    <td align='right'>204</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1047774','6.87','1748.0000','12008.76','200.00~1978.00','0,2','梁** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(889.4000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>889.4000</td>
+                    <td align='right'>6101.28</td>
+                    <td align='right'>200.00~889.40</td>
+                    <td align='right'>刘** 2分钟</td>
+                    <td align='right'>4955</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048127','6.86','889.4000','6101.28','200.00~889.40','2','刘** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(2273.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>2273.0000</td>
+                    <td align='right'>15592.78</td>
+                    <td align='right'>1000.00~2273.00</td>
+                    <td align='right'>王** 29分钟前</td>
+                    <td align='right'>163</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048123','6.86','2273.0000','15592.78','1000.00~2273.00','2','王** 29分钟前');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(29600.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>29600.0000</td>
+                    <td align='right'>203056.00</td>
+                    <td align='right'>200.00~12000.00</td>
+                    <td align='right'>赵** 2分钟</td>
+                    <td align='right'>17023</td>
+                    <td align='right'>1分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048012','6.86','29600.0000','203056.00','200.00~12000.00','0','赵** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(6300.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>6300.0000</td>
+                    <td align='right'>43218.00</td>
+                    <td align='right'>101.00~6300.00</td>
+                    <td align='right'>孙** 2分钟</td>
+                    <td align='right'>13873</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048009','6.86','6300.0000','43218.00','101.00~6300.00','2','孙** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>205800.00</td>
+                    <td align='right'>1000.00~30000.00</td>
+                    <td align='right'>杨** 2分钟</td>
+                    <td align='right'>4622</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048004','6.86','30000.0000','205800.00','1000.00~30000.00','2','杨** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.86</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>205800.00</td>
+                    <td align='right'>1000.00~30000.00</td>
+                    <td align='right'>杨** 2分钟</td>
+                    <td align='right'>4622</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048001','6.86','30000.0000','205800.00','1000.00~30000.00','0,2','杨** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(28681.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>28681.0000</td>
+                    <td align='right'>196464.85</td>
+                    <td align='right'>101.00~28681.00</td>
+                    <td align='right'>罗** 2分钟</td>
+                    <td align='right'>904</td>
+                    <td align='right'>5分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048138','6.85','28681.0000','196464.85','101.00~28681.00','2','罗** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(25000.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>25000.0000</td>
+                    <td align='right'>171250.00</td>
+                    <td align='right'>3000.00~25000.00</td>
+                    <td align='right'>左** 2分钟</td>
+                    <td align='right'>123</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon1 src=images/pay_type_icon1.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048137','6.85','25000.0000','171250.00','3000.00~25000.00','0,1,2','左** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(2000.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>2000.0000</td>
+                    <td align='right'>13700.00</td>
+                    <td align='right'>100.00~2000.00</td>
+                    <td align='right'>邵** 2分钟</td>
+                    <td align='right'>5096</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048131','6.85','2000.0000','13700.00','100.00~2000.00','0,2','邵** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(9675.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>9675.0000</td>
+                    <td align='right'>66273.75</td>
+                    <td align='right'>500.00~9675.00</td>
+                    <td align='right'>余** 2分钟</td>
+                    <td align='right'>2295</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048128','6.85','9675.0000','66273.75','500.00~9675.00','0','余** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(3800.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>3800.0000</td>
+                    <td align='right'>26030.00</td>
+                    <td align='right'>100.00~3800.00</td>
+                    <td align='right'>邵** 2分钟</td>
+                    <td align='right'>5096</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048125','6.85','3800.0000','26030.00','100.00~3800.00','0,2','邵** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(8124.6853);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>8124.6853</td>
+                    <td align='right'>55654.09</td>
+                    <td align='right'>501.00~30000.00</td>
+                    <td align='right'>罗** 2分钟</td>
+                    <td align='right'>904</td>
+                    <td align='right'>5分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048106','6.85','8124.6853','55654.09','501.00~30000.00','2','罗** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>205500.00</td>
+                    <td align='right'>500.00~30000.00</td>
+                    <td align='right'>余** 2分钟</td>
+                    <td align='right'>2295</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048102','6.85','30000.0000','205500.00','500.00~30000.00','0','余** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(2069.3077);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>2069.3077</td>
+                    <td align='right'>14174.76</td>
+                    <td align='right'>200.00~18982.00</td>
+                    <td align='right'>刘** 2分钟</td>
+                    <td align='right'>5538</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048097','6.85','2069.3077','14174.76','200.00~18982.00','2','刘** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(259.9365);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>259.9365</td>
+                    <td align='right'>1780.57</td>
+                    <td align='right'>100.00~4456.00</td>
+                    <td align='right'>刘** 2分钟</td>
+                    <td align='right'>5538</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048096','6.85','259.9365','1780.57','100.00~4456.00','2','刘** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(5049.0000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.85</td>
+                    <td align='right'>5049.0000</td>
+                    <td align='right'>34585.65</td>
+                    <td align='right'>5049.00~5049.00</td>
+                    <td align='right'>黄** 3分钟</td>
+                    <td align='right'>14</td>
+                    <td align='right'>1分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048091','6.85','5049.0000','34585.65','5049.00~5049.00','2','黄** 3分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(4712.5000);">
+                    <td align='left'><span class='green'>卖出</span></td>
+                    <td align='right'>6.84</td>
+                    <td align='right'>4712.5000</td>
+                    <td align='right'>32233.50</td>
+                    <td align='right'>200.00~4712.50</td>
+                    <td align='right'>刘** 2分钟</td>
+                    <td align='right'>4955</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(1,'1048142','6.84','4712.5000','32233.50','200.00~4712.50','2','刘** 2分钟');" class='btn-error od-btn' title=''>买入</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(15000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.83</td>
+                    <td align='right'>15000.0000</td>
+                    <td align='right'>102450.00</td>
+                    <td align='right'>5000.00~15000.00</td>
+                    <td align='right'>徐** 1小时前</td>
+                    <td align='right'>71</td>
+                    <td align='right'>1分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1045269','6.83','15000.0000','102450.00','5000.00~15000.00','2','徐** 1小时前');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(15000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.83</td>
+                    <td align='right'>15000.0000</td>
+                    <td align='right'>102450.00</td>
+                    <td align='right'>5000.00~15000.00</td>
+                    <td align='right'>徐** 1小时前</td>
+                    <td align='right'>71</td>
+                    <td align='right'>1分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1045271','6.83','15000.0000','102450.00','5000.00~15000.00','2','徐** 1小时前');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(7300.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.83</td>
+                    <td align='right'>7300.0000</td>
+                    <td align='right'>49859.00</td>
+                    <td align='right'>7300.00~7300.00</td>
+                    <td align='right'>李** 56分钟前</td>
+                    <td align='right'>29</td>
+                    <td align='right'>10分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1047753','6.83','7300.0000','49859.00','7300.00~7300.00','2','李** 56分钟前');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.83</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204900.00</td>
+                    <td align='right'>10000.00~30000.00</td>
+                    <td align='right'>王** 3分钟</td>
+                    <td align='right'>77</td>
+                    <td align='right'>7分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048074','6.83','30000.0000','204900.00','10000.00~30000.00','0','王** 3分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.82</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204600.00</td>
+                    <td align='right'>2345.00~30000.00</td>
+                    <td align='right'>王** 1分钟</td>
+                    <td align='right'>1581</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048030','6.82','30000.0000','204600.00','2345.00~30000.00','2','王** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.82</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204600.00</td>
+                    <td align='right'>2346.00~30000.00</td>
+                    <td align='right'>王** 1分钟</td>
+                    <td align='right'>1581</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048031','6.82','30000.0000','204600.00','2346.00~30000.00','2','王** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.82</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204600.00</td>
+                    <td align='right'>3000.00~30000.00</td>
+                    <td align='right'>罗** 1分钟</td>
+                    <td align='right'>904</td>
+                    <td align='right'>5分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048107','6.82','30000.0000','204600.00','3000.00~30000.00','2','罗** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204300.00</td>
+                    <td align='right'>1000.00~30000.00</td>
+                    <td align='right'>刘** 1分钟</td>
+                    <td align='right'>5538</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048093','6.81','30000.0000','204300.00','1000.00~30000.00','2','刘** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204300.00</td>
+                    <td align='right'>1001.00~30000.00</td>
+                    <td align='right'>刘** 1分钟</td>
+                    <td align='right'>5538</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048094','6.81','30000.0000','204300.00','1001.00~30000.00','2','刘** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204300.00</td>
+                    <td align='right'>2000.00~30000.00</td>
+                    <td align='right'>余** 1分钟</td>
+                    <td align='right'>2295</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048116','6.81','30000.0000','204300.00','2000.00~30000.00','0,2','余** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(28209.0036);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>28209.0036</td>
+                    <td align='right'>192103.31</td>
+                    <td align='right'>100.00~30000.00</td>
+                    <td align='right'>刘** 1分钟</td>
+                    <td align='right'>4955</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048117','6.81','28209.0036','192103.31','100.00~30000.00','2','刘** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204300.00</td>
+                    <td align='right'>2000.00~30000.00</td>
+                    <td align='right'>余** 1分钟</td>
+                    <td align='right'>2295</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048121','6.81','30000.0000','204300.00','2000.00~30000.00','0,2','余** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.81</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204300.00</td>
+                    <td align='right'>3000.00~30000.00</td>
+                    <td align='right'>罗** 1分钟</td>
+                    <td align='right'>904</td>
+                    <td align='right'>5分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048139','6.81','30000.0000','204300.00','3000.00~30000.00','2','罗** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(15000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>15000.0000</td>
+                    <td align='right'>102000.00</td>
+                    <td align='right'>3000.00~15000.00</td>
+                    <td align='right'>胡** 1分钟</td>
+                    <td align='right'>2262</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1045453','6.80','15000.0000','102000.00','3000.00~15000.00','0,2','胡** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(3000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>3000.0000</td>
+                    <td align='right'>20400.00</td>
+                    <td align='right'>100.00~3000.00</td>
+                    <td align='right'>陶** 1分钟</td>
+                    <td align='right'>7552</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon1 src=images/pay_type_icon1.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1047901','6.80','3000.0000','20400.00','100.00~3000.00','0,1,2','陶** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(10000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>10000.0000</td>
+                    <td align='right'>68000.00</td>
+                    <td align='right'>200.00~500.00</td>
+                    <td align='right'>邵** 1分钟</td>
+                    <td align='right'>5096</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048130','6.80','10000.0000','68000.00','200.00~500.00','0','邵** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204000.00</td>
+                    <td align='right'>1001.00~30000.00</td>
+                    <td align='right'>李** 12分钟</td>
+                    <td align='right'>3348</td>
+                    <td align='right'>2分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048136','6.80','30000.0000','204000.00','1001.00~30000.00','0,2','李** 12分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(30000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>30000.0000</td>
+                    <td align='right'>204000.00</td>
+                    <td align='right'>100.00~30000.00</td>
+                    <td align='right'>刘** 1分钟</td>
+                    <td align='right'>4955</td>
+                    <td align='right'>3分钟</td>
+                    <td align='right'><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048140','6.80','30000.0000','204000.00','100.00~30000.00','2','刘** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(2000.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.80</td>
+                    <td align='right'>2000.0000</td>
+                    <td align='right'>13600.00</td>
+                    <td align='right'>200.00~2000.00</td>
+                    <td align='right'>梁** 1分钟</td>
+                    <td align='right'>204</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1048141','6.80','2000.0000','13600.00','200.00~2000.00','0,2','梁** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="odd" onclick="set_vol(2155.0000);">
+                    <td align='left'><span class='red'>买入</span></td>
+                    <td align='right'>6.79</td>
+                    <td align='right'>2155.0000</td>
+                    <td align='right'>14632.45</td>
+                    <td align='right'>100.00~3000.00</td>
+                    <td align='right'>陶** 1分钟</td>
+                    <td align='right'>7552</td>
+                    <td align='right'>4分钟</td>
+                    <td align='right'><img class=pay_icon0 src=images/pay_type_icon0.svg /><img class=pay_icon1 src=images/pay_type_icon1.svg /><img class=pay_icon2 src=images/pay_type_icon2.svg /></td>
+                    <td align='right'><a href="javascript:quick_show(0,'1042985','6.79','2155.0000','14632.45','100.00~3000.00','0,1,2','陶** 1分钟');" class='btn-success od-btn' title=''>卖出</a></td>
+                  </tr>
+                  <tr class="table-empty">
+                    <td style="text-align: center"><p><i>i</i>暂无挂单</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <script>
+
+	//检测cookie,显示市场挂单
+	if ($.cookie('hide_push_orders') === undefined || $.cookie('hide_push_orders') === '0') {//显示
+		$('#hidezero').prop('checked', true).addClass('zero-active');
+		$('#divPushOrder').show()
+	} else { //隐藏
+		$('#hidezero').prop('checked', false).removeClass('zero-active');
+	}
+	function fixLeftBar() {
+		var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+		lb.css("height", mh)
+	}
+
+	$('#hideZbtn').on('click', function() { //点击显示/隐藏有按钮
+
+		if ($('#hidezero').hasClass("zero-active")) {
+			$('#divPushOrder').hide();
+			setTimeout(function(){$('#hidezero').removeClass('zero-active')},200);
+			$.cookie('hide_push_orders', '1',{ expires:30,path: '/' });
+			fixLeftBar();
+		} else { //全部显示
+			$('#divPushOrder').show();
+			setTimeout(function(){$('#hidezero').addClass('zero-active')},200);
+			$.cookie('hide_push_orders', '0',{ expires:30,path: '/' });
+			fixLeftBar();
+		}
+	});
+	
+	$(window).load(function(){
+		var divContent = document.getElementById("divPushOrderContent");
+		$("#divPushOrderContent").scrollTop((divContent.scrollHeight-divContent.offsetHeight)/2);
+	});
+	
+</script> 
+        </div>
+        <div class="my-order-box my-orders" style='display:block'>
+          <div class="m_title  m_select"> <span class="order-tab order-t-active" id="ot1">我的当前订单</span> <span class="order-tab" id="ot2">已完成订单</span> <span class="order-tab" id="ot3">已取消订单</span> <span class="order-tab" id="ot4">已申诉订单</span> <span ><a href='/myaccount/myc2chistory' style="color: #d45858;font-size: 13px" target=_blank>更多>></a></span> <span class="pull-right yu-e-link"> <a class="dp-link" href="https://gateio.io/article/16403" target=_blank> C2C交易操作说明 </a> </span> </div>
+          <div id="currOrder" class="sectioncont">
+            <table class='sf-grid table-inacc table-inacc-head'>
+              <thead>
+                <tr>
+                  <th><b>单号</b></th>
+                  <th align='left'><b>类型</b></th>
+                  <th align='right'><b>价格</b>(CNY)</th>
+                  <th align='right'><b>数量</b>(USDT)</th>
+                  <th align='right'><b>金额</b>(CNY)</th>
+                  <th align='right'><b>状态</b></th>
+                  <th align='right'><b>对方姓名</b></th>
+                  <th align='right'><b>建立时间</b></th>
+                  <th align='right'><b>操作</b></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-scroll">
+              <table class='sf-grid table-inacc table-inacc-body' id="myPushOrder">
+                <tbody>
+                  <tr class="table-empty">
+                    <td style="text-align: center"><p><i>i</i>暂无订单</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="historyClosedOrder" class="sectioncont">
+            <table class='sf-grid table-inacc table-inacc-head'>
+              <thead>
+                <tr>
+                  <th><b>单号</b></th>
+                  <th align='left'><b>类型</b></th>
+                  <th align='right'><b>价格</b>(CNY)</th>
+                  <th align='right'><b>数量</b>(USDT)</th>
+                  <th align='right'><b>金额</b>(CNY)</th>
+                  <th align='right'><b>状态</b></th>
+                  <th align='right'><b>对方姓名</b></th>
+                  <th align='right'><b>建立时间</b></th>
+                  <th align='right'><b>操作</b></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-scroll">
+              <table class='sf-grid table-inacc table-inacc-body' id="myClosedOrder">
+                <tbody>
+                  <tr class="table-empty">
+                    <td style="text-align: center"><p><i>i</i>暂无完成订单</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="historyCancelOrder" class="sectioncont">
+            <table class='sf-grid table-inacc table-inacc-head'>
+              <thead>
+                <tr>
+                  <th><b>单号</b></th>
+                  <th align='left'><b>类型</b></th>
+                  <th align='right'><b>价格</b>(CNY)</th>
+                  <th align='right'><b>数量</b>(USDT)</th>
+                  <th align='right'><b>金额</b>(CNY)</th>
+                  <th align='right'><b>状态</b></th>
+                  <th align='right'><b>对方姓名</b></th>
+                  <th align='right'><b>建立时间</b></th>
+                  <th align='right'><b>操作</b></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-scroll">
+              <table class='sf-grid table-inacc table-inacc-body' id="myCancelOrder">
+                <tbody>
+                  <tr class="table-empty">
+                    <td style="text-align: center"><p><i>i</i>暂无取消订单</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <br/>
+          <div>
+            <h3><i class="warn-iocn">!</i>交易须知：</h3>
+            <br/>
+            <ul class="push-warn-tip">
+              <li>1. <span> 超过<b>3笔取消订单</b>将<b>禁止2天</b>C2C交易</span></li>
+              <li>2. <span> 有<b>2个</b>买单未完成，<b>暂停</b>继续下单，完成后恢复</span></li>
+              <li>3. <span> 下单买入后<b>冒充已付款</b>，卖方可申诉举报，一经查实将<b>禁封</b>交易</span></li>
+              <li>4. <span> <b>17:00</b>以后及<b>非工作日</b>时间，每笔请拆分<b>5万</b>以内进行转账，否则将延迟到账</span></li>
+              <li>5. <span><b>卖方</b>收到的资金<b>非买方</b>本人转账,请卖方<b>原路退回</b></span></li>
+              <li>6. <span class=red> 已取消订单，如已付款，请及时申诉，上传付款证明等资料，说明情况</span></li>
+              <li>7. <span class=red> 转账时请勿备注“比特币”、“虚拟币”等信息，否则禁止C2C交易</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="business-order-box" style='display:block'>
+          <div class="m_title">我的商家接单 <em style="font-size: 14px;font-style: normal;"><a href='/myaccount/payment_setup' target=_blank>(支付设置)</a> </em> <span class="pull-right yu-e-link"> <a class="dp-link" href="https://gateio.io/article/16573" target=_blank> 商家操作说明 </a> </span> </div>
+          <div class="sectioncont">
+            <table class='sf-grid table-inacc table-inacc-head'>
+              <thead>
+                <tr>
+                  <th><b>单号</b></th>
+                  <th align='right'><b>挂单时间</b></th>
+                  <th align='right'><b>类型</b></th>
+                  <th align='right'><b>价格(CNY)</b></th>
+                  <th align='right'><b>数量(USDT)</b></th>
+                  <th align='right'><b>金额(CNY)</b></th>
+                  <th align='right'><b>交易限额(USDT)</b></th>
+                  <th align='right'><b>已锁定(USDT)</b></th>
+                  <th align='right'><b>付款方式</b></th>
+                  <th align='right'><b>操作</b></th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-scroll">
+              <table class='sf-grid table-inacc table-inacc-body' id="businessPushOrder">
+                <tbody>
+                  <tr class="table-empty">
+                    <td style="text-align: center"><p><i>i</i>暂无接单</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- main_content --> 
+  
+</div>
+<!-- content -->
+
+<div class="quick-alert-form">
+  <ul id="buy_noty_center_layout_container" class="quick-buy-layout" style="position: fixed;height: auto; margin: 0; padding: 0; list-style-type: none; z-index: 200000;">
+    <li class="gateioNotyTheme noty_container_type_confirm">
+      <div class="noty_bar noty_type_confirm">
+        <div class="noty_message">
+          <div class="noty_text">
+            <h3 style="margin-bottom:10px; color: #de5959">买入:<span class="close pull-right" onclick="quick_hide('0');"></span></h3>
+            <hr>
+            <input type="hidden" name="quick_buy_oid" id="quick_buy_oid" />
+            <table>
+              <tbody>
+                <tr>
+                  <td align="right">商家在线: </td>
+                  <td><span id="quick_buy_biz"></span></td>
+                  <td></td>
+                </tr>
+                <tr id="quick_buy_fixed_rate_setting">
+                  <td class="noty-td">价格: </td>
+                  <td><input id="quick_buy_rate" readonly /></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">买入量: </td>
+                  <td><input class="inputRate" type="text" name="quick_buy_vol"
+                                               id="quick_buy_vol" placeholder="请输入买入量"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="decimal2(this);on_quick_input_buy_vol(get_element('quick_buy_rate').value);"
+                                               value=""/></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr id="quick_buy_rate_amount_setting">
+                  <td class="noty-td">金额: </td>
+                  <td><input class="inputRate"
+                                               type="text"
+                                               name="quick_buy_amount"
+                                               id="quick_buy_amount"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="decimal2(this);on_quick_input_buy_amount(get_element('quick_buy_rate').value);"
+                                               value=""/></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">限额: </td>
+                  <td><input id="quick_buy_amount_limit" maxlength="10" readonly /></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">支付方式: </td>
+                  <td class="pt-checkbox"><ul>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_buy_pay_ali" type="checkbox" name="quick_buy_pay_ali" hidden />
+                        <span>支付宝</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_buy_pay_wechat" type="checkbox" name="quick_buy_pay_wechat" hidden />
+                        <span>微信</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_buy_pay_bank" type="checkbox" name="quick_buy_pay_bank" hidden />
+                        <span>银行转账</span> </li>
+                    </ul>
+                    <span class="red" style="font-size: 14px">（须本人账户支付）</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <label id="quick_buy_tips" class="biz-tips"></label>
+          </div>
+        </div>
+        <div class="noty_buttons">
+          <button class="sub-btn alert-sub pull-left" onclick="quickBuySubmit('USDT', 'CNY');">确定提交</button>
+          <button class="sub-btn pull-right" onclick="quick_hide('0');">关闭</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="quick-alert-form">
+  <ul id="sell_noty_center_layout_container" class="quick-sell-layout" style="position: fixed;height: auto; margin: 0; padding: 0; list-style-type: none; z-index: 200000;">
+    <li class="gateioNotyTheme noty_container_type_confirm">
+      <div class="noty_bar noty_type_confirm">
+        <div class="noty_message">
+          <div class="noty_text">
+            <h3 style="margin-bottom:10px; color: #00b393">卖出:<span class="close pull-right" onclick="quick_hide('1');"></span></h3>
+            <hr>
+            <input type="hidden" name="quick_sell_oid" id="quick_sell_oid" />
+            <table>
+              <tbody>
+                <tr>
+                  <td align="right">商家在线: </td>
+                  <td><span id="quick_sell_biz"></span></td>
+                  <td></td>
+                </tr>
+                <tr id="quick_sell_fixed_rate_setting">
+                  <td class="noty-td">价格: </td>
+                  <td><input id="quick_sell_rate" readonly /></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">卖出量: </td>
+                  <td><input class="inputRate" type="text" name="quick_sell_vol"
+                                           id="quick_sell_vol" 
+										   onkeydown="return check_number(event);"
+										   onkeyup="decimal2(this);on_quick_input_sell_vol(get_element('quick_sell_rate').value);"
+										   value=""/></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr id="quick_sell_rate_amount_setting">
+                  <td class="noty-td">金额: </td>
+                  <td><input class="inputRate"
+                                           type="text"
+                                           name="quick_sell_amount"
+                                           id="quick_sell_amount"
+                                           onkeydown="return check_number(event);"
+									       onkeyup="decimal2(this);on_quick_input_sell_amount(get_element('quick_sell_rate').value);"
+                                           value=""/></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">限额: </td>
+                  <td><input id="quick_sell_amount_limit" maxlength="10" readonly /></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">支付方式: </td>
+                  <td class="pt-checkbox"><ul>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_sell_pay_ali" type="checkbox" name="quick_sell_pay_ali" hidden />
+                        <span>支付宝</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_sell_pay_wechat" type="checkbox" name="quick_sell_pay_wechat" hidden />
+                        <span>微信</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="quick_sell_pay_bank" type="checkbox" name="quick_sell_pay_bank" hidden />
+                        <span>银行转账</span> </li>
+                    </ul>
+                    <span class="red" style="font-size: 14px">（须本人账户支付）</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <label id="quick_sell_tips" class="biz-tips"></label>
+          </div>
+        </div>
+        <div class="noty_buttons">
+          <button class="sub-btn alert-sub pull-left" onclick="quickSellSubmit('USDT', 'CNY');">确定提交</button>
+          <button class="sub-btn pull-right" onclick="quick_hide('1');">关闭</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <audio id="audio" src="images/order.mp3"></audio>
+</div>
+<div class="business-alert-form">
+  <ul id="buy_noty_center_layout_container" class="business-buy-layout" style="position: fixed;height: auto; margin: 0; padding: 0; list-style-type: none; z-index: 200000;">
+    <li class="gateioNotyTheme noty_container_type_confirm">
+      <div class="noty_bar noty_type_confirm">
+        <div class="noty_message">
+          <div class="noty_text">
+            <h3 style="margin-bottom:10px; color: #de5959">商家买入:<span class="close pull-right" onclick="busi_buy_hide();"></span></h3>
+            <hr>
+            <table>
+              <tbody>
+                <tr class="label-tr">
+                  <td class="noty-td">价格设置: </td>
+                  <td class="radio-td"><label>
+                      <input name="buy_rate_fixed" type="radio" value="1" checked/>
+                      固定价格</label>
+                    
+                    <!--<label><input name="buy_rate_fixed" type="radio" value="0" />浮动价格</label>--></td>
+                  <td></td>
+                </tr>
+                <tr class="label-tr" id="buy_rate_ref_id_setting" style='display:none'>
+                  <td class="noty-td">参考市场: </td>
+                  <td class="radio-td"><label>
+                      <input name="buy_rate_ref_id" type="radio" value="21"
+                                                          rate="6.60" updated="2018-08-24 17:18:09" checked/>
+                      coinmarketcap</label>
+                    <label>
+                      <input name="buy_rate_ref_id" type="radio" value="22"
+                                                          rate="6.60" updated="2018-08-24 17:18:10" />
+                      bitfinex</label></td>
+                  <td></td>
+                </tr>
+                <tr class="label-tr" id="buy_ref_rate_disp" style='display:none'>
+                  <td class="noty-td" colspan="2" style="text-align: left;text-indent: 12px;"> 当前参考价格: <span id="buy_ref_rate">6.60</span><span class="coin-unit">CNY<span style="margin-left: 15px">(以实际订单为准)</span></span></td>
+                  <td></td>
+                </tr>
+                <tr id="buy_rate_offset_setting" style='display:none'>
+                  <td class="noty-td">浮动百分比: </td>
+                  <td><input class="inputRate" type="text" name="buy_rate_offset" id="buy_rate_offset"
+                                               placeholder="请输入浮动百分比"
+                                               onkeyup="on_input_biz_rate_offset('buy', get_element('buy_rate_offset'));"
+                                               onpaste="return false;"></td>
+                  <td class="coin-unit">%</td>
+                </tr>
+                <tr id="buy_fixed_rate_setting">
+                  <td class="noty-td">价格: </td>
+                  <td><input class="inputRate" type="text" name="biz_buy_rate" id="biz_buy_rate"
+                                               placeholder="请输入价格"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="decimal2(this);this.value=this.value.replace(/D/g,'');
+                                               on_input_biz_buy_rate(get_element('biz_buy_rate').value);"
+                                               onpaste="return false;"></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">买入量: </td>
+                  <td><input class="inputRate" type="text" name="biz_buy_vol"
+                                               id="biz_buy_vol" placeholder="请输入买入量"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="this.value=this.value.replace(/D/g,''); on_input_biz_buy_vol(get_element('biz_buy_rate').value);"
+                                               onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr id="buy_rate_amount_setting">
+                  <td class="noty-td">金额: </td>
+                  <td><input class="inputRate"
+                                               type="text"
+                                               name="biz_buy_amount"
+                                               id="biz_buy_amount"
+                                               placeholder="请输入金额"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="this.value=this.value.replace(/D/g,''); on_input_biz_buy_total(get_element('biz_buy_rate').value);"
+                                               onpaste="return false;"></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">单笔最小交易量: </td>
+                  <td><input class="inputRate" type="text" name="buy_vol_min" id="buy_vol_min" value="100"
+											   placeholder="请输入最小交易量,最低100"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="decimal2(this);this.value=this.value.replace(/D/g,''); on_input_biz_buy_min_vol();"
+                                               onblur="if(this.value=='')this.value=100"
+											   onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">单笔最大交易量: </td>
+                  <td><input class="inputRate" type="text" name="buy_vol_max"
+                                               id="buy_vol_max"
+											   value="30000"
+                                               placeholder="请输入最大交易量"
+                                               onkeydown="return check_number(event);"
+                                               onkeyup="decimal2(this);this.value=this.value.replace(/D/g,'');"
+                                               onblur="if(this.value==''){if($('#biz_buy_vol').val()==''){this.value=30000 }else{ this.value=$('#biz_buy_vol').val()}}"
+                                               onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">支付方式: </td>
+                  <td class="pt-checkbox"><ul>
+                      <li > <i class="icon-empty"></i>
+                        <input id="biz_buy_pay_ali"type="checkbox" name="biz_buy_pay_ali" hidden  />
+                        <span>支付宝</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="biz_buy_pay_wechat" type="checkbox" name="biz_buy_pay_wechat" hidden />
+                        <span>微信</span> </li>
+                      <li > <i class="icon-empty"></i>
+                        <input id="biz_buy_pay_bank" type="checkbox" name="biz_buy_pay_bank" hidden  />
+                        <span>银行转账</span> </li>
+                    </ul>
+                    <span class="red" style="font-size: 14px">（须本人账户支付）</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td align="right">手续费: </td>
+                  <td><span id="biz_buy_fee">0.2%</span><span class="coin-unit" style="font-size: 14px">(成交才收)</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <label id="biz_buy_tips" class="biz-tips"></label>
+          </div>
+        </div>
+        <div class="noty_buttons">
+          <button class="sub-btn alert-sub pull-left" onclick="bizBuySubmit('USDT', 'CNY');">确定提交</button>
+          <button class="sub-btn pull-right" onclick="busi_buy_hide();">关闭</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="business-alert-form">
+  <ul id="sell_noty_center_layout_container" class="business-sell-layout" style="position: fixed;height: auto; margin: 0; padding: 0; list-style-type: none; z-index: 200000;">
+    <li class="gateioNotyTheme noty_container_type_confirm">
+      <div class="noty_bar noty_type_confirm">
+        <div class="noty_message">
+          <div class="noty_text">
+            <h3 style="margin-bottom:10px; color: #00b393">商家卖出:<span class="close pull-right" onclick="busi_sell_hide();"></span></h3>
+            <hr>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="noty-td">价格设置: </td>
+                  <td><label>
+                      <input name="sell_rate_fixed" type="radio" value="1" checked/>
+                      固定价格</label>
+                    
+                    <!--<label><input name="sell_rate_fixed" type="radio" value="0" />浮动价格</label>--></td>
+                  <td></td>
+                </tr>
+                <tr id="sell_rate_ref_id_setting" style="display:none">
+                  <td class="noty-td">参考市场: </td>
+                  <td><label>
+                      <input name="sell_rate_ref_id" type="radio" value="21"
+                                                      rate="6.60" updated="2018-08-24 17:18:09" checked/>
+                      coinmarketcap</label>
+                    <label>
+                      <input name="sell_rate_ref_id" type="radio" value="22"
+                                                      rate="6.60" updated="2018-08-24 17:18:10" />
+                      bitfinex</label></td>
+                  <td></td>
+                </tr>
+                <tr id="sell_ref_rate_disp" style="display: none;">
+                  <td class="noty-td" colspan="2" style="text-align: left;text-indent: 12px;"> 当前参考价格: <span id="sell_ref_rate">6.60</span><span class="coin-unit">CNY<span style="margin-left: 15px">(以实际订单为准)</span></span></td>
+                  <td></td>
+                </tr>
+                <tr id="sell_rate_offset_setting" style='display:none'>
+                  <td class="noty-td">浮动百分比: </td>
+                  <td><input class="inputRate" type="text" name="sell_rate_offset" id="sell_rate_offset"
+                                           placeholder="请输入浮动百分比"
+                                           onkeyup="on_input_biz_rate_offset('sell', get_element('sell_rate_offset'));"
+                                           onpaste="return false;"></td>
+                  <td class="coin-unit">%</td>
+                </tr>
+                <tr id="sell_fixed_rate_setting">
+                  <td class="noty-td">价格: </td>
+                  <td><input class="inputRate" type="text" name="biz_sell_rate" id="biz_sell_rate"
+                                           placeholder="请输入价格"
+                                           onkeydown="return check_number(event);"
+                                           onkeyup="this.value=this.value.replace(/D/g,''); on_input_biz_sell_rate(get_element('biz_sell_rate').value);"
+                                           onpaste="return false;"></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">卖出量: </td>
+                  <td><input class="inputRate" type="text" name="biz_sell_vol"
+                                           id="biz_sell_vol" placeholder="请输入卖出量"
+                                           onkeydown="return check_number(event);"
+                                           onblur="decimal2(this);"
+                                           onkeyup="decimal2(this); on_input_biz_sell_vol(get_element('biz_sell_rate').value);"
+                                           onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr id="sell_rate_amount_setting">
+                  <td class="noty-td">金额: </td>
+                  <td><input class="inputRate"
+                                           type="text"
+                                           name="biz_sell_amount"
+                                           id="biz_sell_amount"
+                                           placeholder="请输入金额"
+                                           onkeydown="return check_number(event);"
+                                           onkeyup="this.value=this.value.replace(/D/g,''); on_input_biz_sell_total(get_element('biz_sell_rate').value);"
+                                           onpaste="return false;"></td>
+                  <td><span class="coin-unit">CNY</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">单笔最小交易量: </td>
+                  <td><input class="inputRate" type="text" name="sell_vol_min" id="sell_vol_min" value="100"
+										   placeholder="请输入最小交易量,最低100"
+                                           onkeydown="return check_number(event);"
+                                           onkeyup="decimal2(this);this.value=this.value.replace(/D/g,''); on_input_biz_sell_min_vol();"
+                                           onblur="if(this.value=='')this.value=100"
+                                           onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">单笔最大交易量: </td>
+                  <td><input class="inputRate" type="text" name="sell_vol_max"
+                                           id="sell_vol_max"
+										   value="30000"
+                                           placeholder="请输入最大交易量"
+                                           onkeydown="return check_number(event);"
+                                           onkeyup="decimal2(this);this.value=this.value.replace(/D/g,'');"
+                                           onblur="if(this.value==''){if($('#biz_sell_vol').val()==''){this.value=30000 }else{ this.value=$('#biz_sell_vol').val()}}"
+                                           onpaste="return false;"></td>
+                  <td><span class="coin-unit">USDT</span></td>
+                </tr>
+                <tr>
+                  <td class="noty-td">支付方式: </td>
+                  <td class="pt-checkbox"><ul>
+                      <li > <i class="icon-empty"></i>
+                        <input id="biz_sell_pay_ali"type="checkbox" name="biz_sell_pay_ali" hidden  />
+                        <span>支付宝</span> </li>
+                      <li> <i class="icon-empty"></i>
+                        <input id="biz_sell_pay_wechat" type="checkbox" name="biz_sell_pay_wechat" hidden />
+                        <span>微信</span> </li>
+                      <li > <i class="icon-empty"></i>
+                        <input id="biz_sell_pay_bank" type="checkbox" name="biz_sell_pay_bank" hidden  />
+                        <span>银行转账</span> </li>
+                    </ul>
+                    <span class="red" style="font-size: 14px">（须本人账户支付）</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td align="right">手续费: </td>
+                  <td><span id="biz_sell_fee">0.2%</span><span class="coin-unit" style="font-size: 14px">(成交才收)</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <label id="biz_sell_tips" class="biz-tips"></label>
+          </div>
+        </div>
+        <div class="noty_buttons">
+          <button class="sub-btn alert-sub pull-left" onclick="bizSellSubmit('USDT', 'CNY');">确定提交</button>
+          <button class="sub-btn pull-right" onclick="busi_sell_hide();">关闭</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <audio id="audio" src="images/order.mp3"></audio>
+</div>
+<div class="noty_container"></div>
+<div class="noty_con_custom"></div>
+<div class="risk-tip">
+  <div class="r-t-box">
+    <div class="tip-con sectioncont">
+      <h3>gate.io C2C交易区（USDT对CNY）风险提示</h3>
+      <ul class="tip-list">
+        <li>C2C交易是用户之间点对点交易，买方<span class=red><b>场外转账付款</b></span>，卖方收款后确认发币</li>
+        <li>成交后务必在<span class=red><b>30分钟</b></span>内付款，转账后立即点击<span class=red><b>“我已付款”</b></span></li>
+        <li>超过30分钟，如未点击“我已付款”，系统视为无效订单，会自动撤销订单</li>
+        <li>订单撤销后，切勿再付款；如已付款，切勿撤销订单。<span class=red><b>如果操作有误，请第一时间提交申诉，上传付款证明</b></span></li>
+        <li>C2C交易存在风险，请务必充分了解<a href="https://gateio.io/article/16397">交易规则</a>，交易时保持电话畅通，关注邮件和短信提醒，谨防受骗！</li>
+      </ul>
+      <a class="sub-btn risk-agree" href="javascript:;">我已阅读和了解市场规则与风险，进入</a> <a id="riskLeave" href="/" style="margin: 0 auto;display: block;width: 100px;clear: both;font-size: 14px;">暂不交易，离开</a> </div>
+  </div>
+</div>
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+	</script>
+</body>
+</html>

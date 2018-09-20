@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的账号 - Gate.io - The Gate of Blockchain Assets Exchange</title>
+    <meta name="description" content="网址是 Gate.io， 是一个区块链数字资产交易平台，支持比特币Bitcoin, 以太坊, Ethereum,莱特币, Litecoin，Qtum 等币种交易，其特点是快捷，安全。 ">
+    <meta name="keywords" content="比特币, bitcoin, <%= symbol %>, Ethereum, 以太坊, litecoin, LTC, ETC, Qtum, 代币, ICO, 交易平台，交易网站，比特币交易，比特币兑换，比特币市场 ">
+    <meta name="format-detection" content="telephone=no">
+	    <!--[if lte IE 9]><script type="text/javascript">location.href = '/update.html';</script><![endif]-->
+    <link href="/css/style.css?v=1535537699" rel="stylesheet">
+    <style>.icon-48,.icon-32,.icon-16{background-image:url("/images/coins48.png?v=1535355269")}</style>
+    <link href="/css/coins_16.css?v=1535355269" rel="stylesheet">
+    <link href="/css/coins_32.css?v=1535355269" rel="stylesheet">
+                   
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"/>
+<script src="js/lib/jquery-3.3.1.min.js"></script>
+<script src="js/lib/jquery.url.js"></script>
+</head>
+<body class="">
+<div id="nav"></div>
+<script>
+	$("#nav").load("html/nav.html")
+	</script>
+     
+
+<div class="content">
+
+	<link href="/css/usercenter.css?v=1535537948" rel="stylesheet" type="text/css">
+
+<div id="nav-left"></div>
+  <script>
+	$("#nav-left").load("html/left.html")
+	</script>
+
+	<div class="main_content acc-m-con">
+
+				<div class='right_mcontent myacc-con'>
+
+<div class="m_title dp-page-title">
+
+    <h4 class="pull-left">
+
+        <span class="pull-left icon-32 icon-32-<%= symbol %>"></span>
+
+        <span class="pull-left"><%= name %> (<%= symbol %>) 充值 </span>
+
+    </h4>
+
+    <a class="pull-right go-trade-btn r-btn" href='/trade/<%= symbol %>_usdt'>去交易</a>
+
+    <a class="pull-right fund-to-trade" target=_blank href='https://blockchain.info/address/<%= address %>'>区块链记录</a>
+
+</div>
+
+<div class="sectioncont deposit-con">
+
+    <!--<input class='coin_add' style='font-size:20px;' readonly value='<%= address %>'>-->
+
+    <div class="dp-box clearfix">
+
+        <h4 class="clearfix">请将<%= symbol %>汇入如下地址（<a target=_blank href='https://blockchain.info/address/<%= address %>'>点击这里查看区块链记录</a>）：</h4>
+
+        <div class="addr-section pull-left">
+
+            <div class="addr-box addr-box0 ">
+
+                <textarea class='coin_add' readonly><%= address %></textarea>
+
+              <span class="js-copy0" data-clipboard-text="<%= address %>">
+
+                    <span class="sub-btn">复制</span>
+
+                </span>
+
+            </div>
+
+        </div>
+
+                <div class="addr-section pull-right right-sect">
+
+            <img class="dp-qr-img" src="images/qr.png" alt="QR code"/>
+
+            <p>扫码获取充值地址</p>
+
+        </div>
+
+        </div>
+
+        <div class="dp-tip-box clearfix">
+
+        <h3><i class="warn-iocn">!</i>充值须知：</h3>
+
+        <ol>
+
+            <li>请通过 <%= symbol %> <b>客户端</b>或<b>在线钱包</b>将您需要充值的 <%= symbol %> 数目发送到该地址。</li>
+
+            <li>发送完成后，系统会自动在此交易获得 <b>2 个确认</b>后将该笔虚拟币充值到您在本站的账户，2 个确认需要大约 <b>0.5 到 1 小时</b>时间，请耐心等待。</li>
+
+            <li>同一个地址可多次充值，不影响到账。最小充值金额 <b>0.0001</b>。</li>
+
+        </ol>
+
+    </div>
+
+
+    </div>
+
+
+<div class="sectioncont latest-dp-con">
+
+    <div class="m_title dp-page-title">
+
+        <h4 class="pull-left">
+
+            <span class="pull-left icon-32 icon-32-<%= symbol %>"></span>
+
+            <span class="pull-left"><%= symbol %> 最近充值记录</span>
+
+        </h4>
+
+    </div>
+
+    <table class='sf-grid table-inacc table-inacc-head curr-dp-table'>
+        <thead>
+        <tr>
+            <th><b>单号</b></th>
+            <th align='left'><b>时间</b></th>
+            <th align='right'><b>充值金额</b></th>
+            <th align='right'><b>状态</b></th>
+        </tr>
+        </thead>
+    </table>
+
+    <div class="table-scroll">
+
+        <table class='sf-grid table-inacc table-inacc-body curr-dp-table' id="currLatestDepo">
+
+            <tbody>
+<% list.forEach(function(order){ %>
+        <tr>
+            <td><b><%= order.id %></b></td>
+            <td align='left'><b><%= order.createtime %></b></td>
+            <td align='right'><b><%= order.count %></b></td>
+            <td align='right'><b>成功</b></td>
+        </tr>
+<% }) %>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+<div class="m_title dp-page-title">
+
+    <h4 class="pull-left">
+
+        <span class="pull-left icon-32 icon-32-<%= symbol %>"></span>
+
+        <span class="pull-left"><%= symbol %> 交易中心</span>
+
+    </h4>
+
+</div>
+<br>
+
+		<br>
+
+		<br />
+
+	</div> <!-- right_mcontent -->
+
+  </div> <!-- main content -->
+
+</div>
+<div id="footer"></div>
+<script>
+	$("#footer").load("html/footer.html")
+</script>
+</body>
+</html>
+
+
+
+
